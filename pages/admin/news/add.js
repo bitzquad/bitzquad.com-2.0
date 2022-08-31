@@ -33,7 +33,7 @@ const Add = () => {
             writer: {
                 name: "Bitzquad",
                 title: "Bitzquad Company",
-                thumbnail: "https://bitzquad.com/static/images/logo.png",
+                thumbnail: "https://bitzquad.com/static/images/logo.webp",
             },
         });
         if (resp.status === 200 && resp.data.status == 200) {
