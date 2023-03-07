@@ -32,7 +32,7 @@ export const members = [
         id: 2,
         firstName: "Harindu",
         lastName: "Wijesinghe",
-        role: { text: "Co-Founder", bgImg: "/assets/img/squad/role/management.svg" },
+        role: { text: "Co-Founder, CTO", bgImg: "/assets/img/squad/role/management.svg" },
         img: "/assets/img/squad/harindu.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
@@ -60,7 +60,7 @@ export const members = [
         id: 3,
         firstName: "Akash",
         lastName: "Geethanjana",
-        role: { text: "Co-Founder", bgImg: "/assets/img/squad/role/management.svg" },
+        role: { text: "Co-Founder, CMO", bgImg: "/assets/img/squad/role/management.svg" },
         img: "/assets/img/squad/akash.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
@@ -75,10 +75,6 @@ export const members = [
                 url: "https://www.linkedin.com/in/geethakash/",
             },
             {
-                name: "Instagram",
-                url: "https://instagram.com/geeth_akash/",
-            },
-            {
                 name: "Github",
                 url: "https://github.com/geethakash/",
             },
@@ -88,25 +84,18 @@ export const members = [
         id: 4,
         firstName: "Hasindu",
         lastName: "Lanka",
-        role: { text: "Co-Founder, CTO", bgImg: "/assets/img/squad/role/management.svg" },
+        role: { text: "Co-Founder, CSO", bgImg: "/assets/img/squad/role/management.svg" },
         img: "/assets/img/squad/hasindu.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
         description:
             "At Bitzquad, we go against the tide and select the best technology to ensure your product is reliable, scalable and sustainable. You will enjoy it the same tomorrow as well in 10 years.",
         social: [
-            // {
-            //     name: "Facebook",
-            //     url: "https://www.facebook.com/jeffdaylan",
-            // },
+            
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/hasindulanka/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
             {
                 name: "Github",
                 url: "https://github.com/hasindulanka",
@@ -117,7 +106,7 @@ export const members = [
         id: 5,
         firstName: "Ridmi",
         lastName: "Ratnayake",
-        role: { text: "Secretary", bgImg: "/assets/img/squad/role/management.svg" },
+        role: { text: "Secretary, CPO", bgImg: "/assets/img/squad/role/management.svg" },
         img: "/assets/img/squad/ridmi.webp",
         bgColor: "#F5D6C3",
         type: [1],
@@ -132,14 +121,53 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/ridmi-ratnayake-aaa515172/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            // {
-            //     name: "Github",
-            //     url: "",
-            // },
+        ],
+    },
+    {
+        id: 6,
+        firstName: "Isuru",
+        lastName: "Harischandra",
+        role: { text: "Chief Operating Officer", bgImg: "/assets/img/squad/role/management.svg" },
+        img: "/assets/img/squad/isuru.webp",
+        bgColor: "#F5D6C3",
+        type: [1, 2],
+        description: " ",
+        social: [
+            {
+                name: "Facebook",
+                url: "https://www.facebook.com/isuruvihan.harishchandra",
+            },
+            {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/isuru-harischandra-9b09081a4",
+            },
+            
+            {
+                name: "Github",
+                url: "https://github.com/IsuruVihan",
+            },
+        ],
+    },
+    {
+        id: 7,
+        firstName: "Harsha",
+        lastName: "Abeyvickrama",
+        role: { text: "Chief Information Officer", bgImg: "/assets/img/squad/role/management.svg" },
+        img: "/assets/img/squad/harsha.webp",
+        bgColor: "#F5D6C3",
+        type: [1, 2],
+        description: "Prioritize the significant milestones to achieve your goals & be consistent on them. Success will follow .",
+        social: [
+            
+            {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/harshaabeyvickrama/",
+            },
+            
+            {
+                name: "Github",
+                url: "https://github.com/HarshaAbeyvickrama/",
+            },
         ],
     },
     {
@@ -160,69 +188,10 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/ashane-gunarathne/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
+            
             {
                 name: "Github",
                 url: "https://github.com/AshaneKG",
-            },
-        ],
-    },
-    {
-        id: 6,
-        firstName: "Isuru",
-        lastName: "Harischandra",
-        role: { text: "Frontend Developer", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/isuru.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: " ",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/isuruvihan.harishchandra",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/isuru-harischandra-9b09081a4",
-            },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            {
-                name: "Github",
-                url: "https://github.com/IsuruVihan",
-            },
-        ],
-    },
-    {
-        id: 7,
-        firstName: "Harsha",
-        lastName: "Abeyvickrama",
-        role: { text: "Agile Coach, Frontend Developer", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/harsha.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Prioritize the significant milestones to achieve your goals & be consistent on them. Success will follow .",
-        social: [
-            // {
-            //     name: "Facebook",
-            //     url: "https://www.facebook.com/jeffdaylan",
-            // },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/harshaabeyvickrama/",
-            },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            {
-                name: "Github",
-                url: "https://github.com/HarshaAbeyvickrama/",
             },
         ],
     },
@@ -236,18 +205,12 @@ export const members = [
         type: [1, 2],
         description: "Great innovations emerge from self organizing teams!",
         social: [
-            // {
-            //     name: "Facebook",
-            //     url: "https://www.facebook.com/jeffdaylan",
-            // },
+            
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/sanjana-navarathne",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
+            
             {
                 name: "Github",
                 url: "https://github.com/Sanjana-99",
@@ -258,7 +221,7 @@ export const members = [
         id: 10,
         firstName: "Sandun",
         lastName: "Dayarathne",
-        role: { text: "Art - Director", bgImg: "/assets/img/squad/role/artdirector.svg" },
+        role: { text: "Art Director", bgImg: "/assets/img/squad/role/artdirector.svg" },
         img: "/assets/img/squad/sandun.webp",
         bgColor: "#F5D6C3",
         type: [3],
@@ -272,14 +235,7 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/company/dayagraphics/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            // {
-            //     name: "Github",
-            //     url: "",
-            // },
+            
         ],
     },
     {
@@ -292,22 +248,12 @@ export const members = [
         type: [3],
         description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
         social: [
-            // {
-            //     name: "Facebook",
-            //     url: "https://www.facebook.com/jeffdaylan",
-            // },
+           
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/dilshinepic/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            // {
-            //     name: "Github",
-            //     url: "",
-            // },
+           
         ],
     },
     {
@@ -318,7 +264,7 @@ export const members = [
         img: "/assets/img/squad/nuwantha.webp",
         bgColor: "#F5D6C3",
         type: [3],
-        description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
+        description: "",
         social: [
             {
                 name: "Facebook",
@@ -328,14 +274,44 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/nuwantha-herath-15a01219b/",
             },
-            // {
-            //     name: "Instagram",
-            //     url: "https://www.instagram.com/jeffdaylan/",
-            // },
-            // {
-            //     name: "Github",
-            //     url: "",
-            // },
+           
+        ],
+    },
+    {
+        id: 13,
+        firstName: "Senuri",
+        lastName: "Wickramasinghe ",
+        role: { text: "Creative Designer", bgImg: "" },
+        img: "/assets/img/squad/senuri.webp",
+        bgColor: "#F5D6C3",
+        type: [1, 2],
+        description: "Great innovations emerge from self organizing teams!",
+        social: [
+            
+            {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/senuri-wickramasinghe/",
+            },
+            {
+                name: "Instagram",
+                url: "https://www.instagram.com/senuu.di/",
+            },
+        ],
+    },{
+        id: 14,
+        firstName: "Induni",
+        lastName: "Dulanjalee",
+        role: { text: "UI/UX Designer", bgImg: "" },
+        img: "/assets/img/squad/induni.webp",
+        bgColor: "#F5D6C3",
+        type: [1, 2],
+        description: "Great innovations emerge from self organizing teams!",
+        social: [
+            {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/indunijd/",
+            },
+            
         ],
     },
 ];
