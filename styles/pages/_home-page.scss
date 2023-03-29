@@ -1,114 +1,114 @@
 .landing-container {
-  @apply container mx-auto lg:h-screen;
+    @apply container mx-auto lg:h-screen;
 }
 
 .landing {
-  @apply relative h-full w-full justify-center lg:flex lg:items-center;
+    @apply relative h-full w-full justify-center lg:flex lg:items-center;
 
-  &-content {
-    @apply md:w-8/12 lg:pl-12 xl:w-1/2 xl:pl-28;
+    &-content {
+        @apply md:w-8/12 lg:pl-12 xl:w-1/2 xl:pl-28;
 
-    & .landing-title-wrapper {
-      @apply overflow-y-auto py-5 pb-5 pr-0 sm:pr-10 lg:mb-5 2xl:pr-20;
-    }
+        & .landing-title-wrapper {
+            @apply overflow-y-auto py-5 pb-5 pr-0 sm:pr-10 lg:mb-5 2xl:pr-20;
+        }
 
-    & .landing-title,
-    .landing-letter {
-      @apply relative inline-block text-4xl font-semibold lg:text-5xl 2xl:text-6xl;
+        & .landing-title,
+        .landing-letter {
+            @apply relative inline-block text-4xl font-semibold lg:text-5xl 2xl:text-6xl;
+        }
+        & p {
+            @apply text-base lg:text-xl;
+            line-height: 150%;
+        }
     }
-    & p {
-      @apply text-base lg:text-xl;
-      line-height: 150%;
-    }
-  }
-  &-logo {
-    @apply absolute left-[43%] top-[25%] -z-30 w-4/12  items-center justify-center  md:top-[-100%] lg:static lg:z-0 lg:flex lg:w-1/2;
+    &-logo {
+        @apply absolute  -z-30 hidden w-4/12 items-center justify-center md:right-[0%] md:top-[35%] md:flex lg:static lg:left-[43%] lg:top-[25%] lg:z-0 lg:flex lg:w-1/2;
 
-    & img {
-      @apply aspect-square w-3/12;
+        & img {
+            @apply aspect-square md:w-5/12 lg:w-3/12;
+        }
     }
-  }
-  &-text {
-    @apply mt-10 tracking-[5px];
-  }
+    &-text {
+        @apply mt-10 tracking-[5px];
+    }
 }
 
 // testimonials section
 .testimonials_ {
-  @apply bz-container;
-  & h2 {
-    @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
-  }
-
-  &_content__item {
-    @apply flex w-full justify-center lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
-
-    &_image {
-      @apply relative hidden w-3/12 overflow-hidden object-cover lg:block;
-
-      & img {
-        @apply w-full;
-      }
+    @apply bz-container;
+    & h2 {
+        @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
     }
-    &_content {
-      @apply relative flex flex-col-reverse overflow-hidden pt-2 lg:w-9/12  lg:flex-col xl:pt-5 2xl:pt-10;
 
-      &_user {
-        @apply mt-8 flex w-full items-center truncate lg:mt-0 lg:block;
-      }
+    &_content__item {
+        @apply flex w-full justify-center lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
 
-      & .person {
-        @apply text-2xl font-semibold md:text-3xl 2xl:text-5xl;
-      }
-      & .role {
-        @apply mt-1 truncate text-lg md:text-xl lg:mt-2 2xl:mt-3 2xl:text-2xl;
-      }
-      & .text {
-        @apply pt-8 text-2xl text-slate-800 2xl:text-3xl;
-      }
+        &_image {
+            @apply relative hidden w-3/12 overflow-hidden object-cover lg:block;
+
+            & img {
+                @apply w-full;
+            }
+        }
+        &_content {
+            @apply relative flex flex-col-reverse overflow-hidden pt-2 lg:w-9/12  lg:flex-col xl:pt-5 2xl:pt-10;
+
+            &_user {
+                @apply mt-8 flex w-full items-center truncate lg:mt-0 lg:block;
+            }
+
+            & .person {
+                @apply text-2xl font-semibold md:text-3xl 2xl:text-5xl;
+            }
+            & .role {
+                @apply mt-1 truncate text-lg md:text-xl lg:mt-2 2xl:mt-3 2xl:text-2xl;
+            }
+            & .text {
+                @apply pt-8 text-2xl text-slate-800 2xl:text-3xl;
+            }
+        }
     }
-  }
 }
 
 // collaborate section
 
 .collaborate_ {
-  @apply mt-20 lg:mx-auto;
-  & h2 {
-    @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
-  }
-  &_bgwrapper {
-    @apply pb-20 lg:bg-inherit;
-  }
-  &_content {
-    @apply flex w-full justify-center lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
-    &_wrapper {
-      @apply bz-container;
+    @apply mt-20 lg:mx-auto;
+    & h2 {
+        @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
     }
-
-    &_text {
-      @apply w-full lg:w-2/3;
-
-      & p {
-        line-height: 150% !important;
-        @apply pt-8 text-lg   text-slate-800 lg:text-xl 2xl:text-3xl;
-      }
-      .talk-btn {
-        @apply mt-4 rounded-full border-2 border-purple-700 text-lg  text-purple-700 sm:mt-8 lg:bg-transparent lg:text-2xl;
-      }
+    &_bgwrapper {
+        @apply pb-20 lg:bg-inherit;
     }
-    &_image {
-      @apply relative hidden w-1/3 overflow-hidden object-cover lg:block;
+    &_content {
+        @apply flex w-full justify-center lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
+        &_wrapper {
+            @apply bz-container;
+        }
 
-      & img {
-        @apply w-full;
-      }
+        &_text {
+            @apply w-full lg:w-2/3;
+
+            & p {
+                line-height: 150% !important;
+                @apply pt-8 text-lg   text-slate-800 lg:text-xl 2xl:text-3xl;
+            }
+            .talk-btn {
+                @apply mt-4 rounded-full border-2 border-purple-700 text-lg  text-purple-700 sm:mt-8 lg:bg-transparent lg:text-2xl;
+            }
+        }
+        &_image {
+            @apply relative hidden w-1/3 overflow-hidden object-cover lg:block;
+
+            & img {
+                @apply w-full;
+            }
+        }
     }
-  }
 }
 
 .shape {
-  @apply absolute top-0 left-0 hidden  h-auto w-full md:top-20 lg:top-0 lg:block;
+    @apply absolute top-0 left-0 hidden  h-auto w-full md:top-20 lg:top-0 lg:block;
 }
 
 // service card section
@@ -145,95 +145,91 @@
 // services section
 
 .services_ {
-  @apply mt-20 lg:mx-auto  2xl:mt-0;
-  & h2 {
-    @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
+    @apply mt-20 lg:mx-auto  2xl:mt-0;
+    & h2 {
+        @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
 
-    & span {
-      @apply text-xl font-semibold md:text-2xl  lg:text-3xl 2xl:text-4xl;
-    }
-  }
-
-  &_content {
-    @apply flex w-full flex-col-reverse justify-center lg:flex-row lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
-    &_wrapper {
-      @apply bz-container mt-0;
-    }
-
-    &_grid {
-      @apply grid grid-cols-1 gap-[1px] md:grid-cols-2 lg:w-2/3;
-
-      & .card {
-        @apply p-5 pr-10 transition-all duration-500 hover:bg-gray-50;
-        &_title {
-          @apply text-2xl font-semibold 2xl:text-3xl;
+        & span {
+            @apply text-xl font-semibold md:text-2xl  lg:text-3xl 2xl:text-4xl;
         }
-        &_text {
-          @apply mt-2 mb-1 text-xs text-slate-800 2xl:mb-3 2xl:text-lg;
-        }
-        &_button {
-          @apply underline-link border-b border-gray-900 text-sm 2xl:text-xl;
-        }
-      }
-      & .card:nth-child(1) {
-        @apply border-b-2 md:border-r-2;
-      }
-      & .card:nth-child(2) {
-        @apply border-b-2;
-      }
-      & .card:nth-child(3) {
-        @apply border-b-2 md:border-b-0 md:border-r-2;
-      }
     }
-    &_image {
-      @apply mx-auto flex  w-2/3 items-center justify-center pt-10 pb-0 lg:w-1/3 lg:pt-0 lg:pb-0;
-      & img {
-        @apply w-full object-cover;
-      }
+
+    &_content {
+        @apply flex w-full flex-col-reverse justify-center lg:flex-row lg:gap-x-10 lg:px-5 lg:pt-8 xl:gap-x-16 xl:px-20 2xl:pt-16;
+        &_wrapper {
+            @apply bz-container mt-0;
+        }
+
+        &_grid {
+            @apply grid grid-cols-1 gap-[1px] md:mt-10 md:grid-cols-2 lg:mt-0 lg:w-2/3;
+
+            & .card {
+                @apply p-5 pr-10 transition-all duration-500 hover:bg-gray-50;
+                &_title {
+                    @apply text-2xl font-semibold 2xl:text-3xl;
+                }
+                &_text {
+                    @apply mt-2 mb-1 text-xs text-slate-800 2xl:mb-3 2xl:text-lg;
+                }
+                &_button {
+                    @apply underline-link border-b border-gray-900 text-sm 2xl:text-xl;
+                }
+            }
+            & .card:nth-child(1) {
+                @apply border-b-2 md:border-r-2;
+            }
+            & .card:nth-child(2) {
+                @apply border-b-2;
+            }
+            & .card:nth-child(3) {
+                @apply border-b-2 md:border-b-0 md:border-r-2;
+            }
+        }
+        &_image {
+            @apply mx-auto flex  w-2/3 items-center justify-center pt-10 pb-0 lg:w-1/3 lg:pt-0 lg:pb-0;
+            & img {
+                @apply w-full object-cover;
+            }
+        }
     }
-  }
 }
 
 // project section
 .project-section {
-  &-wrapper {
-    @apply relative mt-14 overflow-hidden 2xl:mt-36;
-  }
-  &-content {
-    @apply py-5 pb-32 lg:py-20 lg:pb-52;
-    background: linear-gradient(
-      159.29deg,
-      #ffffff 25.86%,
-      rgba(255, 255, 255, 0) 77.78%
-    );
+    &-wrapper {
+        @apply relative mt-14 overflow-hidden 2xl:mt-36;
+    }
+    &-content {
+        @apply py-5 pb-32 lg:py-20 lg:pb-52;
+        background: linear-gradient(159.29deg, #ffffff 25.86%, rgba(255, 255, 255, 0) 77.78%);
 
-    & h2 {
-      @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
+        & h2 {
+            @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
+        }
+        & p {
+            line-height: 150% !important;
+            @apply w-full pt-8  text-lg text-slate-800 lg:w-4/6   lg:px-5 lg:pt-8 lg:text-xl xl:px-20 2xl:pt-16 2xl:text-3xl;
+        }
     }
-    & p {
-      line-height: 150% !important;
-      @apply w-full pt-8  text-lg text-slate-800 lg:w-1/2 lg:text-xl 2xl:text-3xl;
-    }
-  }
 }
 
 // partners section
 .partners {
-  &_container {
-    @apply bz-container;
-
-    & h2 {
-      @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
-    }
-  }
-
-  &_card {
-    @apply min-h-[3rem];
     &_container {
-      @apply mx-auto mt-10 mb-0 grid w-3/4 items-center justify-center gap-y-10 gap-x-10 md:w-3/4 md:grid-cols-3 lg:mt-10 lg:w-2/3 lg:gap-x-10 xl:mt-20;
+        @apply bz-container;
+
+        & h2 {
+            @apply text-3xl font-semibold md:text-4xl  lg:text-5xl 2xl:text-6xl;
+        }
     }
-    &_image {
-      @apply relative h-auto w-full overflow-hidden object-cover opacity-100  lg:p-5;
+
+    &_card {
+        @apply min-h-[3rem];
+        &_container {
+            @apply mx-auto mt-10 mb-0 grid w-3/4 items-center justify-center gap-y-10 gap-x-10 md:w-3/4 md:grid-cols-3 lg:mt-10 lg:w-2/3 lg:gap-x-10 xl:mt-20;
+        }
+        &_image {
+            @apply relative h-auto w-full overflow-hidden object-cover opacity-100  lg:p-5;
+        }
     }
-  }
 }
