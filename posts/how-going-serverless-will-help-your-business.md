@@ -1,5 +1,5 @@
 ---
-title: "How going serverless will help your business"
+title: "Revolutionize Your Business: Discover the Benefits of Going Serverless Today!"
 date: "Oct 24, 2022"
 excerpt: "Serverless is a well-known buzzword nowadays. How it will benifit my business?"
 category: "Technology"
@@ -8,13 +8,7 @@ cover_image: "/assets/img/blog/post-serverless/post-serverless-cover.webp"
 main_image: "/assets/img/blog/post-serverless/post-serverless-main.webp"
 writer: "HASINDU LANKA"
 writer_avatar: "/assets/img/squad/hasindu.webp"
-writer_social:
-  {
-    "Website": "https://hasindu.lk",
-    "Github": "https://github.com/hasindulanka",
-    "LinkedIn": "https://www.linkedin.com/in/hasindulanka",
-    "Twitter": "https://twitter.com/Hasindu_Lanka",
-  }
+writer_social: { "Website": "https://hasindu.lk", "Github": "https://github.com/hasindulanka", "LinkedIn": "https://www.linkedin.com/in/hasindulanka", "Twitter": "https://twitter.com/Hasindu_Lanka" }
 quote: "We cannot solve our problems with the same thinking we used when we created them"
 quote_owner: "Albert Einstein"
 ---
