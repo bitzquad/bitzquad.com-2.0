@@ -14,7 +14,7 @@ const menu: TMenu = {
         {
             name: "Dashboard",
             href: "",
-            base: "/editor/dashboard",
+            base: "/admin/dashboard",
             icon: HomeIcon,
             current: false,
 
@@ -33,7 +33,7 @@ const menu: TMenu = {
         {
             name: "Users",
             href: "",
-            base: "/editor/users",
+            base: "/admin/users",
             icon: UserIcon,
             current: false,
 
@@ -57,7 +57,7 @@ const menu: TMenu = {
         {
             name: "Jobs",
             href: "",
-            base: "/editor/jobs",
+            base: "/admin/jobs",
             icon: BriefcaseIcon,
             current: false,
 
@@ -81,7 +81,7 @@ const menu: TMenu = {
         // {
         //     name: "News",
         //     href: "",
-        //     base: "/editor/news",
+        //     base: "/admin/news",
         //     icon: MailIcon,
         //     current: false,
 
@@ -105,7 +105,7 @@ const menu: TMenu = {
         {
             name: "Other",
             href: "",
-            base: "/editor/other",
+            base: "/admin/other",
             icon: LinkIcon,
             current: false,
 
@@ -120,7 +120,7 @@ const menu: TMenu = {
             name: "Settings",
             href: "",
 
-            base: "/editor/settings",
+            base: "/admin/settings",
 
             icon: ViewGridIcon,
             current: false,
@@ -141,7 +141,7 @@ const menu: TMenu = {
             name: "System",
             href: "",
 
-            base: "/editor/system",
+            base: "/admin/system",
             icon: ExclamationIcon,
             current: false,
 

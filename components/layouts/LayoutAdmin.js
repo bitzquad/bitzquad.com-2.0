@@ -79,7 +79,7 @@ const Layout = ({ children }) => {
                 <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
                     <div className="flex flex-1 flex-col overflow-x-hidden pt-5 pb-4">
                         <div className="flex flex-shrink-0 items-center justify-center px-4">
-                            <img className="h-8 w-auto" src={sidebarCollapse ? "/logo.webp" : "/logo-dark.webp"} alt="Workflow" onClick={() => router.push("/")} />
+                            <img className="h-8 w-auto" src={sidebarCollapse ? "/logo.webp" : "/logo-dark.webp"} alt="Bitzquad" onClick={() => router.push("/")} />
                             {sidebarCollapse ? <ArrowRightIcon className="absolute -right-4 h-8 w-8 rounded-full border border-gray-200 bg-white p-1 text-gray-500 hover:text-gray-700" aria-hidden="true" onClick={() => setSidebarCollapse(false)} /> : <ArrowLeftIcon className="absolute -right-4 h-8 w-8 rounded-full border border-gray-200 bg-white p-1 text-gray-500 hover:text-gray-700" aria-hidden="true" onClick={() => setSidebarCollapse(true)} />}
                         </div>
                         <nav className="mt-8 flex-1 space-y-1 overflow-y-auto bg-white px-2" aria-label="Sidebar">

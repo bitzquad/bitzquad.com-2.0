@@ -35,10 +35,10 @@ const SignIn = (props) => {
         }
     };
     return (
-        <div className="flex flex-col bg-white px-8 md:py-10 lg:flex-row">
+        <div className="mt-10 flex flex-col bg-white px-8 md:py-10 lg:mt-24 lg:flex-row">
             {/* Picture  */}
             <div className="w-full px-0 lg:w-1/2 xl:px-12">
-                <img className="h-full w-full object-cover" src="/img/login-bg.png" alt="" />
+                <img className="h-full w-full object-contain" src="/logo-dark.webp" alt="" />
             </div>
             {/* Form  */}
             <div className="mt-10 w-full px-0 lg:mt-0 lg:w-1/2 xl:px-12">
