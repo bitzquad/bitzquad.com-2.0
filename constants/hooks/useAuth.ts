@@ -36,7 +36,7 @@ const signIn = async (email: string, password: string, loadingCallback: (loading
 //         });
 //         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signup`, {
 //             ...user,
-//             authid: awsresp.userSub,
+//             password: awsresp.userSub,
 //         });
 //     } catch (error: any) {
 //         loadingCallback(false);
@@ -74,7 +74,7 @@ const signIn = async (email: string, password: string, loadingCallback: (loading
 //         console.log("gc : ", gc);
 //         awsresp = await Auth.currentAuthenticatedUser();
 //         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signin`, {
-//             authid: awsresp.signInUserSession.accessToken.payload.username,
+//             password: awsresp.signInUserSession.accessToken.payload.username,
 //         });
 //     } catch (error: any) {
 //         loadingCallback(false);

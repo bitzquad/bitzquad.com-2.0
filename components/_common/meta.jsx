@@ -10,7 +10,7 @@ export default function Meta(props) {
 
             {/* Facebook */}
             <meta property="og:type" content={props.type ? props.type : "website"} />
-            <meta property="og:site_name" content="DEInclusive"></meta>
+            <meta property="og:site_name" content="Bitzquad"></meta>
             <meta property="og:url" content={props.url} />
             <meta property="og:title" content={props.title} />
             <meta property="og:description" content={props.description} />
@@ -20,9 +20,9 @@ export default function Meta(props) {
             <meta property="og:locale" content="en_US" />
 
             {/* Twitter */}
-            <meta property="article:publisher" content="https://twitter.com/DEInclusive"></meta>
+            <meta property="article:publisher" content="https://twitter.com/Bitzquad"></meta>
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@DEInclusive" />
+            <meta name="twitter:site" content="@bitzquad" />
             <meta name="twitter:title" content={props.title} />
             <meta name="twitter:description" content={props.description} />
             <meta name="twitter:image" content={props.imagetw ? props.imagetw : props.imagefb} />

@@ -4,8 +4,8 @@ import CActionPermission from "../../../types/classes/permission/CActionPermissi
 // Set create permissions for the 'users' collection for the 'Default' role
 const createPermission = new CActionPermission("create");
 createPermission.allowed = true;
-createPermission.immutableprops = ["_id", "owner", "status", "draft", "deleted", "jobcount", "eventcount", "authid"]; // Define the properties that can't be updated by 'Default' role
-createPermission.hiddenprops = ["__v", "deleted", "authid"]; // Define the properties dont't need send  to the client
+createPermission.immutableprops = ["_id", "owner", "status", "draft", "deleted", "jobcount", "eventcount", "password"]; // Define the properties that can't be updated by 'Default' role
+createPermission.hiddenprops = ["__v", "deleted", "password"]; // Define the properties dont't need send  to the client
 
 // Set read permissions for the 'users' collection for the 'Default' role
 const readPermission = new CActionPermission("read");

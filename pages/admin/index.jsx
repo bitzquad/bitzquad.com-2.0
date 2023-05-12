@@ -21,7 +21,7 @@ const SignIn = (props) => {
         const res = await auth.signIn(email, password, (load) => setLoading(load));
         if (res.success) {
             user.setUser(res.user);
-            router.push(router.query.callback == undefined ? "/" : router.query.callback);
+            router.push(router.query.callback == undefined ? "/admin/dashboard" : router.query.callback);
         } else {
             switch (res.error.type) {
                 case "UserNotConfirmedException":
@@ -43,7 +43,7 @@ const SignIn = (props) => {
             {/* Form  */}
             <div className="mt-10 w-full px-0 lg:mt-0 lg:w-1/2 xl:px-12">
                 <div className="md:ml-auto md:px-8 lg:px-16">
-                    <h2 className="text-lg font-semibold text-gray-500">DEInclusive</h2>
+                    <h2 className="text-lg font-semibold text-gray-500">Bitzquad</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sign in to your account</p>
                     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                         <div>
