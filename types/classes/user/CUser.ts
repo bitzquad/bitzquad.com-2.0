@@ -15,20 +15,15 @@ export default class CUser {
     phone?: string;
     address?: CAddress;
 
-    nationality?: string;
-    ethnicity?: string;
-    community?: string;
-
     description?: string;
     content?: string;
     social?: CLink[];
     thumbnail?: CImage;
 
     status: EUsertype = EUsertype.default;
-    authid?: string;
+    password?: string;
 
     jobcount: CLimit = new CLimit();
-    eventcount: CLimit = new CLimit();
 
     // TODO: add user working company
 

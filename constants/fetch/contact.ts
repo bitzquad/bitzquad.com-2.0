@@ -5,7 +5,7 @@ import queryparser from "../queryparser";
 
 // get infomation by id through api
 const getById = async (id: string, select: any = {}, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CContact | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?${queryparser.Build({ _id: id }, select)}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?${queryparser.Build({ _id: id }, select)}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -25,7 +25,7 @@ const getAll = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CContact[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?${queryparser.Build({}, select)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?${queryparser.Build({}, select)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -49,7 +49,7 @@ const get = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CContact[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -63,7 +63,7 @@ const get = async (
 };
 // create new infomation through api
 const create = async (user: CContact, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CContact | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -77,7 +77,7 @@ const create = async (user: CContact, draft: boolean = false, loadingCallback: (
 };
 // update infomation through api
 const update = async (user: CContact, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CContact | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -91,7 +91,7 @@ const update = async (user: CContact, draft: boolean = false, loadingCallback: (
 };
 // update many infomation through api
 const updateProps = async (search: any = {}, job: CContact, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CContact | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact?${queryparser.Build(search)}&draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact?${queryparser.Build(search)}&draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -105,7 +105,7 @@ const updateProps = async (search: any = {}, job: CContact, draft: boolean = fal
 };
 // delete infomation through api
 const remove = async (id: string, permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact`;
     const body: any = { ids: [id], permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
@@ -120,7 +120,7 @@ const remove = async (id: string, permanent: boolean = false, loadingCallback: (
 };
 // delete given infomation trough ids from api
 const removeBulk = async (ids: string[], permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/contact`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact`;
     const body: any = { ids: ids, permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;

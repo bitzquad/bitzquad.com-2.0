@@ -3,7 +3,7 @@ import axios from "axios";
 
 // subscribe through api
 const subscribe = async (email: string, loadingCallback: (loading: boolean) => void): Promise<any | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/newsletter/subscribe`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter/subscribe`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -18,7 +18,7 @@ const subscribe = async (email: string, loadingCallback: (loading: boolean) => v
 
 // subscribe through api
 const unsubscribe = async (email: string, loadingCallback: (loading: boolean) => void): Promise<any | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/newsletter/unsubscribe`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter/unsubscribe`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {

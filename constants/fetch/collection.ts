@@ -5,7 +5,7 @@ import queryparser from "../queryparser";
 
 // get infomation by id through api
 const getById = async (id: string, select: any = {}, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CCollection | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?${queryparser.Build({ _id: id }, select)}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?${queryparser.Build({ _id: id }, select)}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -19,7 +19,7 @@ const getById = async (id: string, select: any = {}, loadingCallback: (loading: 
 };
 // get 'collection' values by key through api
 const getCollectionValues = async (key: string, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any[]> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?${queryparser.Build({ key: key }, { values: 1 })}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?${queryparser.Build({ key: key }, { values: 1 })}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -33,7 +33,7 @@ const getCollectionValues = async (key: string, loadingCallback: (loading: boole
 };
 // get specific infomation through api
 const getCollections = async (ids: string[], loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CCollection[] | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?${queryparser.Build({ key: { $in: ids } }, { values: 1, key: 1 })}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?${queryparser.Build({ key: { $in: ids } }, { values: 1, key: 1 })}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -53,7 +53,7 @@ const getAll = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CCollection[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?${queryparser.Build({}, select, 10000000, 0)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?${queryparser.Build({}, select, 10000000, 0)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -77,7 +77,7 @@ const get = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CCollection[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -91,7 +91,7 @@ const get = async (
 };
 // create new infomation through api
 const create = async (collection: CCollection, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CCollection | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -105,7 +105,7 @@ const create = async (collection: CCollection, draft: boolean = false, loadingCa
 };
 // update infomation through api
 const update = async (collection: CCollection, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CCollection | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -119,7 +119,7 @@ const update = async (collection: CCollection, draft: boolean = false, loadingCa
 };
 // delete infomation trough api
 const remove = async (id: string, permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections`;
     const body: any = { ids: [id], permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
@@ -134,7 +134,7 @@ const remove = async (id: string, permanent: boolean = false, loadingCallback: (
 };
 // delete given infomation trough ids from api
 const removeBulk = async (ids: string[], permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/collections`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/collections`;
     const body: any = { ids: ids, permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;

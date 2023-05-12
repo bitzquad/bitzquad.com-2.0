@@ -62,30 +62,6 @@ const compressImage = async (file: any, options: any): Promise<File | null> => {
 const uploadProfilePicture = async (id: string, file: any): Promise<boolean> => {
     return uploadImage(`users/usr-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 150, initialQuality: 0.5, useWebWorker: true });
 };
-// upload job thumbnail
-const uploadJobThumbnail = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`jobs/job-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 1024, initialQuality: 0.2, useWebWorker: true });
-};
-// upload event thumbnail
-const uploadEventThumbnail = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`events/evt-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 1024, initialQuality: 0.2, useWebWorker: true });
-};
-// upload event speaker picture
-const uploadEventSpeakerPicture = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`events/spk-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 150, initialQuality: 0.5, useWebWorker: true });
-};
-// upload event video picture
-const uploadEventVideoPicture = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`events/vdo-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 1024, initialQuality: 0.2, useWebWorker: true });
-};
-// upload company logo
-const uploadCompanyThumbnail = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`companies/cl-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 250, initialQuality: 0.2, useWebWorker: true });
-};
-// upload company cover photo
-const uploadCompanyCover = async (id: string, file: any): Promise<boolean> => {
-    return uploadImage(`companies/cc-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 1024, initialQuality: 0.2, useWebWorker: true });
-};
 // upload blog thumbnail
 const uploadBlogThumbnail = async (id: string, file: any): Promise<boolean> => {
     return uploadImage(`blogs/bp-${id}.png`, file, { maxSizeMB: 0.2, maxWidthOrHeight: 1024, initialQuality: 0.2, useWebWorker: true });
@@ -101,12 +77,6 @@ export default {
     remove,
     uploadImage,
     uploadProfilePicture,
-    uploadJobThumbnail,
-    uploadEventThumbnail,
-    uploadEventSpeakerPicture,
-    uploadEventVideoPicture,
-    uploadCompanyThumbnail,
-    uploadCompanyCover,
     uploadBlogThumbnail,
     uploadNewsThumbnail,
 };

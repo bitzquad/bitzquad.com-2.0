@@ -5,25 +5,25 @@ import axios from "axios";
 import CUser from "../../types/classes/user/CUser";
 
 // // sign in with email and password
-// const signIn = async (email: string, password: string, loadingCallback: (loading: boolean) => void, options: any = {}) => {
-//     let awsresp = null;
-//     let svrresp = null;
-//     loadingCallback(true);
-//     try {
-//         awsresp = await Auth.signIn(email, password);
-//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
-//             authid: awsresp.username,
-//         });
-//     } catch (error: any) {
-//         loadingCallback(false);
-//         return { success: false, error: { type: error.name, message: error.message } };
-//     }
-//     loadingCallback(false);
-//     if (awsresp && svrresp && svrresp.data.user !== null) {
-//         return { success: true, user: svrresp.data.user, awsresponse: awsresp };
-//     }
-//     return { success: false, error: { type: "unknown", message: "unknown error" } };
-// };
+const signIn = async (email: string, password: string, loadingCallback: (loading: boolean) => void, options: any = {}) => {
+    let svrresp = null;
+    loadingCallback(true);
+    try {
+        //awsresp = await Auth.signIn(email, password);
+        svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signin`, {
+            email,
+            password,
+        });
+    } catch (error: any) {
+        loadingCallback(false);
+        return { success: false, error: { type: error.name, message: error.message } };
+    }
+    loadingCallback(false);
+    if (svrresp && svrresp.data.user !== null) {
+        return { success: true, user: svrresp.data.user };
+    }
+    return { success: false, error: { type: "unknown", message: "unknown error" } };
+};
 // // sign up with email and password
 // const signUp = async (email: string, password: string, user: CUser, loadingCallback: (loading: boolean) => void, options: any = {}) => {
 //     let awsresp = null;
@@ -34,7 +34,7 @@ import CUser from "../../types/classes/user/CUser";
 //             username: email,
 //             password,
 //         });
-//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, {
+//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signup`, {
 //             ...user,
 //             authid: awsresp.userSub,
 //         });
@@ -54,7 +54,7 @@ import CUser from "../../types/classes/user/CUser";
 //     loadingCallback(true);
 //     try {
 //         await Auth.signOut();
-//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signout`);
+//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signout`);
 //     } catch (error: any) {
 //         loadingCallback(false);
 //         return { success: false, error: { type: error.name, message: error.message } };
@@ -73,7 +73,7 @@ import CUser from "../../types/classes/user/CUser";
 //         });
 //         console.log("gc : ", gc);
 //         awsresp = await Auth.currentAuthenticatedUser();
-//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
+//         svrresp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signin`, {
 //             authid: awsresp.signInUserSession.accessToken.payload.username,
 //         });
 //     } catch (error: any) {
@@ -284,7 +284,7 @@ import CUser from "../../types/classes/user/CUser";
 
 export default {
     // signUp,
-    // signIn,
+    signIn,
     // signOut,
     // signInWithGoogle,
     // getCurrentUser,

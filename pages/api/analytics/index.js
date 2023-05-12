@@ -1,10 +1,4 @@
 /*  Importings    */
-import mongodb from "../../../middleware/mongodb";
-import Contact from "../../../constants/schemas/contact";
-import Transmit from "../../../constants/Transmit";
-import request from "../../../middleware/request";
-import queryparser from "../../../middleware/queryparser";
-
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 
 /*  API Route Handler    */
@@ -14,7 +8,7 @@ export default async function handler(req, res) {
             await handleGET(req, res);
             break;
         default:
-            return res.status(200).json(new Transmit({}, 400, "Invalid Request"));
+            return res.status(400).json({ message: "Invalid Request" });
     }
 }
 /*  Handle HTTP GET Actions    */
@@ -23,7 +17,7 @@ async function handleGET(req, res) {
         const analyticsDataClient = new BetaAnalyticsDataClient({
             credentials: JSON.parse(process.env.GOOGLE_CRED),
         });
-        const [response] = await analyticsDataClient.runReport({
+        const [response] = analyticsDataClient.runReport({
             property: `properties/329441108`,
             dimensions: [{ name: "pagePath" }],
             metrics: [{ name: "activeUsers" }, { name: "screenPageViews" }],
@@ -32,12 +26,8 @@ async function handleGET(req, res) {
             metricAggregations: ["TOTAL"],
         });
 
-        return res.status(200).json(
-            new Transmit({
-                data: { users: response.rows[0].metricValues[0].value, views: response.rows[0].metricValues[1].value },
-            })
-        );
+        return res.status(200).json({ users: response.rows[0].metricValues[0].value, views: response.rows[0].metricValues[1].value });
     } catch (e) {
-        return res.status(200).json(new Transmit({ error: e.message }, 500, "Error"));
+        return res.status(500).json({ message: e.message });
     }
 }

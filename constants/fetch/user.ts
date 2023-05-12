@@ -5,7 +5,7 @@ import queryparser from "../queryparser";
 
 // get infomation by id through api
 const getById = async (id: string, select: any = {}, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?${queryparser.Build({ _id: id }, select)}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?${queryparser.Build({ _id: id }, select)}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -25,7 +25,7 @@ const getAll = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CUser[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?${queryparser.Build({}, select)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?${queryparser.Build({}, select)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -49,7 +49,7 @@ const get = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CUser[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -63,7 +63,7 @@ const get = async (
 };
 // create new infomation through api
 const create = async (user: CUser, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -77,7 +77,7 @@ const create = async (user: CUser, draft: boolean = false, loadingCallback: (loa
 };
 // update infomation through api
 const update = async (user: CUser, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -91,7 +91,7 @@ const update = async (user: CUser, draft: boolean = false, loadingCallback: (loa
 };
 // update many infomation through api
 const updateProps = async (search: any = {}, job: CUser, draft: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users?${queryparser.Build(search)}&draft=${draft}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users?${queryparser.Build(search)}&draft=${draft}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -105,7 +105,7 @@ const updateProps = async (search: any = {}, job: CUser, draft: boolean = false,
 };
 // delete infomation through api
 const remove = async (id: string, permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users`;
     const body: any = { ids: [id], permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
@@ -120,7 +120,7 @@ const remove = async (id: string, permanent: boolean = false, loadingCallback: (
 };
 // delete given infomation trough ids from api
 const removeBulk = async (ids: string[], permanent: boolean = false, loadingCallback: (loading: boolean) => void, options: any = {}): Promise<any> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users`;
     const body: any = { ids: ids, permanent: permanent }; // remove request payload
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
@@ -137,7 +137,7 @@ const removeBulk = async (ids: string[], permanent: boolean = false, loadingCall
 // public endpoint calls
 
 const getMyInfo = async (loadingCallback: (loading: boolean) => void): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/myinfo`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/myinfo`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -161,7 +161,7 @@ const get_Public = async (
     loadingCallback: (loading: boolean) => void,
     options: any = {}
 ): Promise<{ values: CUser[]; count: number; itemsperpage: number; page: number } | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users/public?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/public?${queryparser.Build(search, select, items, page, sort)}&count=${count}&countonly=${countonly}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {
@@ -175,7 +175,7 @@ const get_Public = async (
 };
 
 const getById_Public = async (id: string, select: any = {}, loadingCallback: (loading: boolean) => void): Promise<CUser | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/users/public?${queryparser.Build({ _id: id }, select)}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/public?${queryparser.Build({ _id: id }, select)}`;
     loadingCallback(true); // set loading callback of parent function to 'true'
     let response = null;
     try {

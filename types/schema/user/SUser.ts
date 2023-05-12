@@ -24,10 +24,6 @@ const Schema = new mongoose.Schema<CUser>(
             location: { type: String, default: "" },
         },
 
-        nationality: { type: String, default: "" },
-        ethnicity: { type: String, default: "" },
-        community: { type: String, default: "" },
-
         description: { type: String, default: "" },
         content: { type: String, default: "" },
         social: {
@@ -49,14 +45,9 @@ const Schema = new mongoose.Schema<CUser>(
         },
 
         status: { type: Number, default: 0 },
-        authid: { type: String, default: "" },
+        password: { type: String, default: "123456", required: true },
 
         jobcount: {
-            count: { type: Number, default: 0 },
-            max: { type: Number, default: 0 },
-            min: { type: Number, default: 0 },
-        },
-        eventcount: {
             count: { type: Number, default: 0 },
             max: { type: Number, default: 0 },
             min: { type: Number, default: 0 },
