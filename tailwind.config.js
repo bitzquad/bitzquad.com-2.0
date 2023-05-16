@@ -22,6 +22,6 @@ module.exports = {
                 "3xl": "1780px",
             },
         },
-        plugins: [require("@tailwindcss/forms")],
     },
+    plugins: [require("@tailwindcss/forms")],
 };

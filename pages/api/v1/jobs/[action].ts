@@ -9,17 +9,8 @@ import EUsertype from "../../../../types/enum/_common/EUsertype";
 let userType = EUsertype.default; // Collection type
 let userId = ""; // User id
 
-const noAccessUserTypes = [
-    EUsertype.default,
-    EUsertype.signed,
-    EUsertype.regular,
-    EUsertype.newswriter,
-    EUsertype.newsadmin,
-    EUsertype.blogwriter,
-    EUsertype.blogadmin,
-    EUsertype.blognewsadmin,
-];
-const fullAccessUserTypes = [EUsertype.adminmod, EUsertype.admin, EUsertype.superadmin];
+const noAccessUserTypes = [EUsertype.default];
+const fullAccessUserTypes = [EUsertype.admin];
 
 /*  API Route Handler   */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -73,10 +64,7 @@ function calculateQuality(resp: any) {
     let q = 100;
     switch (resp.result) {
         case "neutral":
-            q -=
-                resp?.masculine_coded_words.length > resp?.feminine_coded_words.length
-                    ? (resp?.masculine_coded_words.length - resp?.feminine_coded_words.length) * 3
-                    : (resp?.feminine_coded_words.length - resp?.masculine_coded_words.length) * 3;
+            q -= resp?.masculine_coded_words.length > resp?.feminine_coded_words.length ? (resp?.masculine_coded_words.length - resp?.feminine_coded_words.length) * 3 : (resp?.feminine_coded_words.length - resp?.masculine_coded_words.length) * 3;
             break;
         default:
             q -= (resp?.masculine_coded_words.length + resp?.feminine_coded_words.length) * 3;

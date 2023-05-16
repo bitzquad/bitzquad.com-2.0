@@ -1,9 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import AWS from "aws-sdk";
 
-const s3 = new AWS.S3({
+AWS.config.update({
     accessKeyId: process.env.ACCESS_KEY,
     secretAccessKey: process.env.SECRET_KEY,
+});
+const s3 = new AWS.S3({
+    endpoint: process.env.ENDPOINT,
     region: process.env.REGION,
     signatureVersion: "v4",
 });
@@ -43,15 +46,16 @@ async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
             case "upload":
                 var params = {
                     Bucket: process.env.BUCKET_NAME,
-                    Fields: {
-                        key: req.query.key?.toString() || "",
-                    },
+                    Key: req.query.key?.toString() || "",
                     Expires: 60, // seconds
-                    Conditions: [
-                        ["content-length-range", 0, 1024 * 1024 * 10], // up to 10 MB
-                    ],
+                    ACL: "public-read",
+                    ContentType: req.query.type?.toString() || "",
+                    //signatureVersion: "v4",
+                    // Conditions: [
+                    //     ["content-length-range", 0, 1024 * 1024 * 15], // up to 15 MB
+                    // ],
                 };
-                const post = s3.createPresignedPost(params);
+                const post = s3.getSignedUrl("putObject", params);
                 res.status(200).json(post);
                 break;
         }
