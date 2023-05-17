@@ -7,8 +7,7 @@ export const members = [
         img: "/assets/img/squad/kesara.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
-        description:
-            "Imagination plays an important role in creativity. Discipline & Consistency will keep you in the run but the Execution & Passion is the key to ultimate reward. Once you keep all of these in check, you'll be on your own path towards success.",
+        description: "Imagination plays an important role in creativity. Discipline & Consistency will keep you in the run but the Execution & Passion is the key to ultimate reward. Once you keep all of these in check, you'll be on your own path towards success.",
         social: [
             {
                 name: "Facebook",
@@ -88,10 +87,8 @@ export const members = [
         img: "/assets/img/squad/hasindu.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
-        description:
-            "At Bitzquad, we go against the tide and select the best technology to ensure your product is reliable, scalable and sustainable. You will enjoy it the same tomorrow as well in 10 years.",
+        description: "At Bitzquad, we go against the tide and select the best technology to ensure your product is reliable, scalable and sustainable. You will enjoy it the same tomorrow as well in 10 years.",
         social: [
-            
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/hasindulanka/",
@@ -110,8 +107,7 @@ export const members = [
         img: "/assets/img/squad/ridmi.webp",
         bgColor: "#F5D6C3",
         type: [1],
-        description:
-            "I believe Bitzquad has a team that challenges and inspires me to bring out the best of myself. It's exciting to think of greater heights we can achieve together.",
+        description: "I believe Bitzquad has a team that challenges and inspires me to bring out the best of myself. It's exciting to think of greater heights we can achieve together.",
         social: [
             {
                 name: "Facebook",
@@ -141,7 +137,7 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/isuru-harischandra-9b09081a4",
             },
-            
+
             {
                 name: "Github",
                 url: "https://github.com/IsuruVihan",
@@ -158,125 +154,124 @@ export const members = [
         type: [1, 2],
         description: "Prioritize the significant milestones to achieve your goals & be consistent on them. Success will follow .",
         social: [
-            
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/harshaabeyvickrama/",
             },
-            
+
             {
                 name: "Github",
                 url: "https://github.com/HarshaAbeyvickrama/",
             },
         ],
     },
-    {
-        id: 8,
-        firstName: "Ashane",
-        lastName: "Gunarathne",
-        role: { text: "Project Manager", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/ashene.webp",
-        bgColor: "#F5D6C3",
-        type: [1],
-        description: "Stay true to yourself! If you hold your vision and trust the process, you will slowly, but surely reach your destination. ",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/ashane.gunarathne.1",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/ashane-gunarathne/",
-            },
-            
-            {
-                name: "Github",
-                url: "https://github.com/AshaneKG",
-            },
-        ],
-    },
-    {
-        id: 9,
-        firstName: "Sanjana",
-        lastName: "Navarathne",
-        role: { text: "Product Owner", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/sanjana.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Great innovations emerge from self organizing teams!",
-        social: [
-            
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/sanjana-navarathne",
-            },
-            
-            {
-                name: "Github",
-                url: "https://github.com/Sanjana-99",
-            },
-        ],
-    },
-    {
-        id: 10,
-        firstName: "Sandun",
-        lastName: "Dayarathne",
-        role: { text: "Art Director", bgImg: "/assets/img/squad/role/artdirector.svg" },
-        img: "/assets/img/squad/sandun.webp",
-        bgColor: "#F5D6C3",
-        type: [3],
-        description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/daya.graphics99",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/company/dayagraphics/",
-            },
-            
-        ],
-    },
-    {
-        id: 11,
-        firstName: "Tharuka",
-        lastName: "Dilshan",
-        role: { text: "Creative Designer", bgImg: "/assets/img/squad/role/artdirector.svg" },
-        img: "/assets/img/squad/tharuka.webp",
-        bgColor: "#F5D6C3",
-        type: [3],
-        description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
-        social: [
-           
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/dilshinepic/",
-            },
-           
-        ],
-    },
-    {
-        id: 12,
-        firstName: "Nuwantha",
-        lastName: "Herath",
-        role: { text: "Creative Designer", bgImg: "/assets/img/squad/role/artdirector.svg" },
-        img: "/assets/img/squad/nuwantha.webp",
-        bgColor: "#F5D6C3",
-        type: [3],
-        description: "",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/Nuwahm",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/nuwantha-herath-15a01219b/",
-            },
-           
-        ],
-    },
+    // {
+    //     id: 8,
+    //     firstName: "Ashane",
+    //     lastName: "Gunarathne",
+    //     role: { text: "Project Manager", bgImg: "/assets/img/squad/role/management.svg" },
+    //     img: "/assets/img/squad/ashene.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [1],
+    //     description: "Stay true to yourself! If you hold your vision and trust the process, you will slowly, but surely reach your destination. ",
+    //     social: [
+    //         {
+    //             name: "Facebook",
+    //             url: "https://www.facebook.com/ashane.gunarathne.1",
+    //         },
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/ashane-gunarathne/",
+    //         },
+
+    //         {
+    //             name: "Github",
+    //             url: "https://github.com/AshaneKG",
+    //         },
+    //     ],
+    // },
+    // {
+    //     id: 9,
+    //     firstName: "Sanjana",
+    //     lastName: "Navarathne",
+    //     role: { text: "Product Owner", bgImg: "/assets/img/squad/role/management.svg" },
+    //     img: "/assets/img/squad/sanjana.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [1, 2],
+    //     description: "Great innovations emerge from self organizing teams!",
+    //     social: [
+
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/sanjana-navarathne",
+    //         },
+
+    //         {
+    //             name: "Github",
+    //             url: "https://github.com/Sanjana-99",
+    //         },
+    //     ],
+    // },
+    // {
+    //     id: 10,
+    //     firstName: "Sandun",
+    //     lastName: "Dayarathne",
+    //     role: { text: "Art Director", bgImg: "/assets/img/squad/role/artdirector.svg" },
+    //     img: "/assets/img/squad/sandun.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [3],
+    //     description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
+    //     social: [
+    //         {
+    //             name: "Facebook",
+    //             url: "https://www.facebook.com/daya.graphics99",
+    //         },
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/company/dayagraphics/",
+    //         },
+
+    //     ],
+    // },
+    // {
+    //     id: 11,
+    //     firstName: "Tharuka",
+    //     lastName: "Dilshan",
+    //     role: { text: "Creative Designer", bgImg: "/assets/img/squad/role/artdirector.svg" },
+    //     img: "/assets/img/squad/tharuka.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [3],
+    //     description: "Your design should be future proof. As a result, consumers will remember your brand for a long time. ",
+    //     social: [
+
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/dilshinepic/",
+    //         },
+
+    //     ],
+    // },
+    // {
+    //     id: 12,
+    //     firstName: "Nuwantha",
+    //     lastName: "Herath",
+    //     role: { text: "Creative Designer", bgImg: "/assets/img/squad/role/artdirector.svg" },
+    //     img: "/assets/img/squad/nuwantha.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [3],
+    //     description: "",
+    //     social: [
+    //         {
+    //             name: "Facebook",
+    //             url: "https://www.facebook.com/Nuwahm",
+    //         },
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/nuwantha-herath-15a01219b/",
+    //         },
+
+    //     ],
+    // },
     {
         id: 13,
         firstName: "Senuri",
@@ -287,7 +282,6 @@ export const members = [
         type: [1, 2],
         description: "Great innovations emerge from self organizing teams!",
         social: [
-            
             {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/senuri-wickramasinghe/",
@@ -297,7 +291,8 @@ export const members = [
                 url: "https://www.instagram.com/senuu.di/",
             },
         ],
-    },{
+    },
+    {
         id: 14,
         firstName: "Induni",
         lastName: "Dulanjalee",
@@ -311,7 +306,6 @@ export const members = [
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/in/indunijd/",
             },
-            
         ],
     },
 ];
