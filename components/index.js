@@ -1,7 +1,6 @@
 // layouts
 export { default as LayoutMain } from "./layouts/LayoutMain";
 export { default as LayoutSubPages } from "./layouts/LayoutSubPages";
-export { default as LayoutAdmin } from "./layouts/LayoutAdmin";
 
 // defaults
 export { default as Navbar } from "./defaults/Navbar";
