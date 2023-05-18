@@ -7,6 +7,7 @@ import jobs from "./jobs";
 import collections from "./collections";
 import news from "./news";
 import contact from "./contact";
+import jobpublic from "./jobpublic";
 
 const permissions = new CRolePermission(); // Create a new permissions object for role 'Admin'
 permissions.role = EUsertype.admin; // Set the role of the permissions object
@@ -15,5 +16,6 @@ permissions.collections["jobs"] = jobs.admin; // Set the permissions for the 'jo
 permissions.collections["collections"] = collections.admin; // Set the permissions for the 'collections' collection
 permissions.collections["news"] = news.admin; // Set the permissions for the 'blog' collection
 permissions.collections["contact"] = contact.admin; // Set the permissions for the 'contact' collection
+permissions.collections["jobpublic"] = jobpublic.admin; // Set the permissions for the 'jobpublic' collection
 
 export default permissions;

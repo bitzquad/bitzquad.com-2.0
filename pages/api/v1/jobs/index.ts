@@ -72,11 +72,11 @@ async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
         let obj = p.resolveObject(req.body, p.create); // Sanitize the request body
         obj.owner = userId; // Set the owner of the obj
         obj.status = EApprovalState.pending; // Set the status to pending
-        const qualityres = await fetcher.check(obj.content, () => {});
-        if (qualityres.statusCode >= 200 && qualityres.statusCode < 300) {
-            const wc = JSON.parse(qualityres.body);
-            obj.quality = calculateQuality(wc);
-        }
+        // const qualityres = await fetcher.check(obj.content, () => {});
+        // if (qualityres.statusCode >= 200 && qualityres.statusCode < 300) {
+        //     const wc = JSON.parse(qualityres.body);
+        //     obj.quality = calculateQuality(wc);
+        // }
         const resp = await Schema.create({ ...obj, draft: req.query.draft === "true" }); // Create the obj
 
         return res.status(200).json(p.resolveObjectArray(resp, p.create.hiddenprops)); // Return the sanitized obj
@@ -94,11 +94,11 @@ async function handlePUT(req: NextApiRequest, res: NextApiResponse) {
 
         let filter = p.update.resolve({ _id: req.body._id, invokerid: userId }); // Check the permissions & sanitize the request body
         let obj = p.resolveObject(req.body, p.update); // Sanitize the request body
-        const qualityres = await fetcher.check(obj.content, () => {});
-        if (qualityres.statusCode >= 200 && qualityres.statusCode < 300) {
-            const wc = JSON.parse(qualityres.body);
-            obj.quality = calculateQuality(wc);
-        }
+        // const qualityres = await fetcher.check(obj.content, () => {});
+        // if (qualityres.statusCode >= 200 && qualityres.statusCode < 300) {
+        //     const wc = JSON.parse(qualityres.body);
+        //     obj.quality = calculateQuality(wc);
+        // }
         const resp = await Schema.updateOne({ ...filter }, { ...obj, draft: req.query.draft === "true" }, { new: true }); // Update the obj
 
         return res.status(200).json(resp);
@@ -144,10 +144,7 @@ function calculateQuality(resp: any) {
     let q = 100;
     switch (resp.result) {
         case "neutral":
-            q -=
-                resp?.masculine_coded_words.length > resp?.feminine_coded_words.length
-                    ? (resp?.masculine_coded_words.length - resp?.feminine_coded_words.length) * 3
-                    : (resp?.feminine_coded_words.length - resp?.masculine_coded_words.length) * 3;
+            q -= resp?.masculine_coded_words.length > resp?.feminine_coded_words.length ? (resp?.masculine_coded_words.length - resp?.feminine_coded_words.length) * 3 : (resp?.feminine_coded_words.length - resp?.masculine_coded_words.length) * 3;
             break;
         default:
             q -= (resp?.masculine_coded_words.length + resp?.feminine_coded_words.length) * 3;

@@ -170,10 +170,10 @@ const Add = (props) => {
                 _errors.candidatescount = "Candidate count must grater than or equal to 1";
                 isValid = false;
             } else _errors.candidatescount = "";
-            if (!dataObj.company || !dataObj.company.id || dataObj.company.id.length < 5) {
-                _errors.company = "Please select a company";
-                isValid = false;
-            } else _errors.company = "";
+            // if (!dataObj.company || !dataObj.company.id || dataObj.company.id.length < 5) {
+            //     _errors.company = "Please select a company";
+            //     isValid = false;
+            // } else _errors.company = "";
         }
         console.log("Errors", _errors);
         setErrors(_errors);
@@ -185,6 +185,7 @@ const Add = (props) => {
         e.preventDefault();
         console.log("Job : ", dataObj);
         const check = validate();
+        dataObj.company = { id: "1234567890", name: "Bitzquad" };
         if (check) {
             props?.onSubmit(dataObj);
         } else {
@@ -300,7 +301,7 @@ const Add = (props) => {
                             <div className="mt-1 sm:col-span-2 sm:mt-0">
                                 <div className="flex max-w-lg justify-between rounded-md pb-6">
                                     <div>{getQualityStatus(_quality || dataObj.quality)}</div>
-                                    <button type="button" onClick={checkQuality} className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                    <button type="button" onClick={checkQuality} className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                                         Check
                                     </button>
                                 </div>
@@ -332,7 +333,7 @@ const Add = (props) => {
                                     {dataObj.thumbnail && dataObj.thumbnail.src && <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${dataObj._id || "job"}${thumblstup}?key=${dataObj.thumbnail.src}`} alt="Job banner" className="h-full w-full rounded-md" />}
                                     {(!dataObj.thumbnail || !dataObj.thumbnail.src) && thumbnail && <img src={thumbnail} alt="Job banner" className="h-full w-full rounded-md" />}
                                 </div>
-                                <div className="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                                <div className="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pb-6 pt-5">
                                     <div className="space-y-1 text-center">
                                         <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                                             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
@@ -546,7 +547,7 @@ const Add = (props) => {
                                         <label htmlFor="salary.timeperiod" className="sr-only">
                                             Time Period
                                         </label>
-                                        <select name="salary.timeperiod" id="salary.timeperiod" autoComplete="salary.timeperiod" className={getInputSytle(errors.salary?.timeperiod) + " rounded-r-md rounded-l-none"} value={dataObj.salary?.timeperiod} onChange={handleChange} readOnly={getReadOnly("salary.timeperiod")}>
+                                        <select name="salary.timeperiod" id="salary.timeperiod" autoComplete="salary.timeperiod" className={getInputSytle(errors.salary?.timeperiod) + " rounded-l-none rounded-r-md"} value={dataObj.salary?.timeperiod} onChange={handleChange} readOnly={getReadOnly("salary.timeperiod")}>
                                             <option>Per Hour</option>
                                             <option>Per Day</option>
                                             <option>Per Week</option>
@@ -756,11 +757,11 @@ const Add = (props) => {
                             props?.onCancel();
                         }}
                         type="button"
-                        className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         Cancel
                     </button>
-                    <button type="submit" className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <button type="submit" className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Save
                     </button>
                 </div>

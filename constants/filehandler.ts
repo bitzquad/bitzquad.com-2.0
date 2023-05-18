@@ -3,44 +3,16 @@ import axios from "axios";
 import imageCompression from "browser-image-compression";
 
 // upload given file to s3
-// const upload = async (key: string, type: string, file: any): Promise<boolean> => {
-//     const cred = await axios.post(`/api/v1/files/upload?key=${key}&type=${type}`);
-//     console.log("CCC", cred);
-//     if (cred.status == 200 && cred.data) {
-//         const formData = new FormData();
-
-//         const fd = Object.entries({ file }) as [string, any];
-//         fd.forEach(([k, v]) => {
-//             formData.append(k, v);
-//         });
-//         const res = await axios.post(cred.data, file, {
-//             headers: {
-//                 "Content-Type": "multipart/form-data",
-//             },
-//         });
-//         if (res.status >= 200 || res.status < 300) {
-//             return true;
-//         }
-//     }
-//     return false;
-// };
-
-const upload = async (key: string, type: string, file: any): Promise<boolean> => {
-    const cred = await axios.post(`/api/v1/files/upload?key=${key}&type=${type}`);
-    console.log("CCC", cred);
+const upload = async (key: string, file: any): Promise<boolean> => {
+    const cred = await axios.post(`/api/v1/files/upload?key=${key}`);
     if (cred.status == 200 && cred.data) {
         const formData = new FormData();
 
-        const fd = Object.entries({ file }) as [string, any];
+        const fd = Object.entries({ ...cred.data.fields, file }) as [string, any];
         fd.forEach(([k, v]) => {
             formData.append(k, v);
         });
-
-        const res = await fetch(cred.data, {
-            method: "POST",
-            body: formData,
-        });
-        console.log("RES", res);
+        const res = await axios.post(cred.data.url, formData);
         if (res.status >= 200 || res.status < 300) {
             return true;
         }
@@ -71,7 +43,7 @@ const imageCompressOptions = { maxSizeMB: 0.2, maxWidthOrHeight: 1920, initialQu
 // compress and upload image to s3
 const uploadImage = async (key: string, file: any, options: any = null): Promise<boolean> => {
     try {
-        return await upload(key, "image", await compressImage(file, options || imageCompressOptions));
+        return await upload(key, await compressImage(file, options || imageCompressOptions));
     } catch (error) {
         console.log(error);
     }

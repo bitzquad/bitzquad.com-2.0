@@ -2,21 +2,7 @@
 
 import { Dialog, Listbox, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
-import {
-    SearchIcon,
-    SortAscendingIcon,
-    SortDescendingIcon,
-    MinusIcon,
-    PencilIcon,
-    TrashIcon,
-    ArrowLeftIcon,
-    ArrowRightIcon,
-    ExclamationIcon,
-    XIcon,
-    PlusIcon,
-    UploadIcon,
-    CheckIcon,
-} from "@heroicons/react/solid";
+import { SearchIcon, SortAscendingIcon, SortDescendingIcon, MinusIcon, PencilIcon, TrashIcon, ArrowLeftIcon, ArrowRightIcon, ExclamationIcon, XIcon, PlusIcon, UploadIcon, CheckIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 
 import fetcher from "../../../constants/fetch/job";
@@ -56,7 +42,7 @@ const columns = [
     },
     {
         name: "Job Type",
-        selector: "dtatype",
+        selector: "jobtype",
         searchable: true,
         multisearchable: true,
         sortable: true,
@@ -208,7 +194,7 @@ const Datatable = (props) => {
     const requiredProps = {
         name: 1,
         category: 1,
-        dtatype: 1,
+        jobtype: 1,
         seniority: 1,
         industry: 1,
         experience: 1,
@@ -233,7 +219,7 @@ const Datatable = (props) => {
             button: () => (
                 <button
                     type="button"
-                    className="mr-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none "
+                    className="mr-2 inline-flex items-center rounded-md border border-transparent bg-green-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-green-700 focus:outline-none "
                     onClick={() => {
                         router.push("?tab=2");
                     }}
@@ -249,7 +235,7 @@ const Datatable = (props) => {
             button: () => (
                 <button
                     type="button"
-                    className="mr-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none "
+                    className="mr-2 inline-flex items-center rounded-md border border-transparent bg-teal-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-teal-700 focus:outline-none "
                     onClick={() => {
                         setShowStatusUpdate(true);
                     }}
@@ -265,7 +251,7 @@ const Datatable = (props) => {
             button: () => (
                 <button
                     type="button"
-                    className="mr-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none "
+                    className="mr-2 inline-flex items-center rounded-md border border-transparent bg-red-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 focus:outline-none "
                     onClick={() => {
                         setDeletingOpen(true);
                     }}
@@ -329,16 +315,7 @@ const Datatable = (props) => {
 
     // data fetching main function
     const fetchdata = async () => {
-        const res = await fetcher.get(
-            buildSearchQuery(),
-            requiredProps,
-            true,
-            false,
-            router.query.itemsperpage,
-            router.query.page - 1,
-            router.query.sort ? JSON.parse(router.query.sort) : { createdAt: -1 },
-            setLoading
-        );
+        const res = await fetcher.get(buildSearchQuery(), requiredProps, true, false, router.query.itemsperpage, router.query.page - 1, router.query.sort ? JSON.parse(router.query.sort) : { createdAt: -1 }, setLoading);
         if (res != null) {
             setSelectedData([]);
             setData(res.values);
@@ -372,7 +349,7 @@ const Datatable = (props) => {
         if (router.query.sort.includes(column.selector) && router.query.sort.includes("-"))
             return (
                 <SortAscendingIcon
-                    className="h-5 w-5 text-gray-400 float-right"
+                    className="float-right h-5 w-5 text-gray-400"
                     aria-hidden="true"
                     onClick={() => {
                         setSort(JSON.stringify({ [column.selector]: 1 }));
@@ -382,7 +359,7 @@ const Datatable = (props) => {
         else if (router.query.sort.includes(column.selector))
             return (
                 <SortDescendingIcon
-                    className="h-5 w-5 text-gray-400 float-right"
+                    className="float-right h-5 w-5 text-gray-400"
                     aria-hidden="true"
                     onClick={() => {
                         setSort(JSON.stringify({ createdAt: -1 }));
@@ -392,7 +369,7 @@ const Datatable = (props) => {
         else
             return (
                 <MinusIcon
-                    className="h-5 w-5 text-gray-400 float-right"
+                    className="float-right h-5 w-5 text-gray-400"
                     aria-hidden="true"
                     onClick={() => {
                         setSort(JSON.stringify({ [column.selector]: -1 }));
@@ -481,34 +458,32 @@ const Datatable = (props) => {
     const getStatus = (status) => {
         switch (status) {
             case EApprovalState.default:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"> Default </span>;
+                return <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"> Default </span>;
             case EApprovalState.pending:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800"> Pending </span>;
+                return <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800"> Pending </span>;
             case EApprovalState.reviewing:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800"> Reviewing </span>;
+                return <span className="inline-flex items-center rounded-full bg-cyan-100 px-2.5 py-0.5 text-xs font-medium text-cyan-800"> Reviewing </span>;
             case EApprovalState.rejected:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800"> Rejected </span>;
+                return <span className="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800"> Rejected </span>;
             case EApprovalState.blocked:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800"> Blocked </span>;
+                return <span className="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800"> Blocked </span>;
             case EApprovalState.approved:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"> Approved </span>;
+                return <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800"> Approved </span>;
         }
     };
     const getBooleanStatus = (status) => {
         switch (status) {
             case true:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"> Yes </span>;
+                return <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800"> Yes </span>;
             case false:
-                return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800"> No </span>;
+                return <span className="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800"> No </span>;
         }
     };
     const getQualityStatus = (quality) => {
-        if (quality > 90)
-            return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800"> Excellent : {quality} </span>;
-        if (quality > 80) return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"> Good : {quality} </span>;
-        if (quality > 70)
-            return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800"> Moderate : {quality} </span>;
-        return <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800"> Not Good : {quality} </span>;
+        if (quality > 90) return <span className="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800"> Excellent : {quality} </span>;
+        if (quality > 80) return <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800"> Good : {quality} </span>;
+        if (quality > 70) return <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800"> Moderate : {quality} </span>;
+        return <span className="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800"> Not Good : {quality} </span>;
     };
 
     // actions
@@ -532,15 +507,11 @@ const Datatable = (props) => {
         <>
             <div className="rounded-md border border-gray-200 shadow-sm">
                 <div className="flex flex-col">
-                    <div className="flex flex-row justify-between mx-5 my-4 font-normal text-sm">
-                        <div className="w-1/2 flex md:justify-start sm:justify-center text-gray-600">
+                    <div className="mx-5 my-4 flex flex-row justify-between text-sm font-normal">
+                        <div className="flex w-1/2 text-gray-600 sm:justify-center md:justify-start">
                             <div>
-                                <label className="font-bold mr-3">Results : </label>
-                                <select
-                                    className="mt-1 pl-3 pr-10 py-2 text-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                                    onChange={(e) => setPageSize(e.target.value)}
-                                    value={router.query.itemsperpage}
-                                >
+                                <label className="mr-3 font-bold">Results : </label>
+                                <select className="mt-1 rounded-md border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" onChange={(e) => setPageSize(e.target.value)} value={router.query.itemsperpage}>
                                     <option value="10">10</option>
                                     <option value="20">20</option>
                                     <option value="50">50</option>
@@ -548,15 +519,11 @@ const Datatable = (props) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="w-1/2 flex md:justify-end sm:justify-center text-gray-600">
-                            <div className="mt-1 relative rounded-md shadow-sm w-full">
+                        <div className="flex w-1/2 text-gray-600 sm:justify-center md:justify-end">
+                            <div className="relative mt-1 w-full rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 flex items-center">
                                     <label className="sr-only">Search Property</label>
-                                    <select
-                                        className="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 text-sm border-transparent bg-transparent font-bold text-gray-800 rounded-md"
-                                        onChange={(e) => setSearchField(e.target.value)}
-                                        value={router.query.searchby}
-                                    >
+                                    <select className="h-full rounded-md border-transparent bg-transparent py-0 pl-3 pr-7 text-sm font-bold text-gray-800 focus:border-indigo-500 focus:ring-indigo-500" onChange={(e) => setSearchField(e.target.value)} value={router.query.searchby}>
                                         <option value="" defaultValue={true}>
                                             Default
                                         </option>
@@ -580,32 +547,23 @@ const Datatable = (props) => {
                                         }
                                     }}
                                 >
-                                    <input
-                                        type="text"
-                                        className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-32 text-sm border-gray-300 rounded-md"
-                                        placeholder="Search..."
-                                        value={_schtxt}
-                                        onChange={(e) => setSearch(e.target.value)}
-                                    />
-                                    <button className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none" type="submit">
+                                    <input type="text" className="block w-full rounded-md border-gray-300 pl-32 text-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Search..." value={_schtxt} onChange={(e) => setSearch(e.target.value)} />
+                                    <button className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" type="submit">
                                         <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                                     </button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between mx-5 mt-0 my-4 font-normal text-sm">
+                    <div className="mx-5 my-4 mt-0 flex flex-row justify-between text-sm font-normal">
                         <div className=" flex flex-wrap text-gray-600">
                             <div>
-                                <label className="font-bold mr-3">Actons : </label>
-                                {selectActions.map(
-                                    (action) =>
-                                        (action.alwaysVisible || (action.single && selectedData.length == 1) || (action.multi && selectedData.length >= 1)) && action.button()
-                                )}
+                                <label className="mr-3 font-bold">Actons : </label>
+                                {selectActions.map((action) => (action.alwaysVisible || (action.single && selectedData.length == 1) || (action.multi && selectedData.length >= 1)) && action.button())}
                                 {router.query.search && router.query.searchby && (
                                     <button
                                         type="button"
-                                        className="float-right inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none "
+                                        className="float-right inline-flex items-center rounded-md border border-transparent bg-yellow-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-yellow-700 focus:outline-none "
                                         onClick={() => {
                                             router.query.search = "";
                                             router.query.searchby = "";
@@ -620,24 +578,16 @@ const Datatable = (props) => {
                         </div>
                     </div>
                     <div className="flex-1 overflow-x-auto">
-                        <table className="min-w-full divide-y whitespace-nowrap">
+                        <table className="min-w-full divide-y whitespace-nowrap ">
                             <thead>
                                 <tr>
-                                    <th className="pl-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                    <th className="border-b border-gray-200 bg-gray-50 py-3 pl-5 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">
                                         <div className="flex items-center justify-center">
-                                            <input
-                                                type="checkbox"
-                                                className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                onChange={() => selectUnselectAll()}
-                                                checked={selectedData.length == data.length}
-                                            />
+                                            <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" onChange={() => selectUnselectAll()} checked={selectedData.length == data.length} />
                                         </div>
                                     </th>
                                     {columns.map((column) => (
-                                        <th
-                                            key={column.selector}
-                                            className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                                        >
+                                        <th key={column.selector} className="border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">
                                             {column.name} {getSortIcon(column)}
                                         </th>
                                     ))}
@@ -650,12 +600,12 @@ const Datatable = (props) => {
                                         .map((_, index) => (
                                             <tr className="animate-pulse" key={index}>
                                                 {columns.map((column) => (
-                                                    <td key={column.selector} className="px-6 py-3 whitespace-no-wrap border-b border-gray-200">
-                                                        <div className="h-2 bg-gray-300 rounded"></div>
+                                                    <td key={column.selector} className="whitespace-no-wrap border-b border-gray-200 px-6 py-3">
+                                                        <div className="h-2 rounded bg-gray-300"></div>
                                                     </td>
                                                 ))}
-                                                <td className="px-6 py-3 whitespace-no-wrap border-b border-gray-200">
-                                                    <div className="h-2 bg-gray-300 rounded"></div>
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-3">
+                                                    <div className="h-2 rounded bg-gray-300"></div>
                                                 </td>
                                             </tr>
                                         ))}
@@ -665,81 +615,70 @@ const Datatable = (props) => {
                                     data.map((item, index) => {
                                         return (
                                             <tr key={index} className="text-gray-600">
-                                                <td className="pl-5 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 py-2 pl-5">
                                                     <div className="flex items-center justify-center">
-                                                        <input
-                                                            type="checkbox"
-                                                            className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                            onChange={() => selectItem(item._id)}
-                                                            checked={isSelected(item._id)}
-                                                        />
+                                                        <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" onChange={() => selectItem(item._id)} checked={isSelected(item._id)} />
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5 text-gray-900">{index + 1}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.name}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.category}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
-                                                    <div className="text-sm leading-5">{item.dtatype}</div>
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
+                                                    <div className="text-sm leading-5">{item.jobtype}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.seniority}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.industry}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.experience}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.workplace}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.education}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">
                                                         {item.salary?.avarage} {item.salary?.currency} {item.salary?.timeperiod}
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{item.candidatescount}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getQualityStatus(item.quality)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getBooleanStatus(item.vacent)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getBooleanStatus(item.urgent)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getBooleanStatus(item.featured)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getBooleanStatus(item.draft)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2">
                                                     <div className="text-sm leading-5">{getStatus(item.status)}</div>
                                                 </td>
-                                                <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200 text-right text-sm leading-5 font-medium">
+                                                <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-2 text-right text-sm font-medium leading-5">
                                                     <div className="flex items-center justify-center">
-                                                        <button
-                                                            className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:shadow-outline"
-                                                            onClick={() => _edit(item)}
-                                                        >
+                                                        <button className="focus:shadow-outline text-indigo-600 hover:text-indigo-900 focus:outline-none" onClick={() => _edit(item)}>
                                                             <PencilIcon className="h-5 w-5" aria-hidden="true" />
                                                         </button>
-                                                        <button
-                                                            className="text-red-600 hover:text-red-900 focus:outline-none focus:shadow-outline ml-4"
-                                                            onClick={() => _delete(item)}
-                                                        >
+                                                        <button className="focus:shadow-outline ml-4 text-red-600 hover:text-red-900 focus:outline-none" onClick={() => _delete(item)}>
                                                             <TrashIcon className="h-5 w-5" aria-hidden="true" />
                                                         </button>
                                                     </div>
@@ -749,24 +688,19 @@ const Datatable = (props) => {
                                     })}
                                 {!loading && data && data.length === 0 && (
                                     <tr className="text-gray-600">
-                                        <td colSpan={columns.length + 1} className="px-6 py-2 whitespace-no-wrap border-b font-medium border-gray-200 text-center">
+                                        <td colSpan={columns.length + 1} className="whitespace-no-wrap border-b border-gray-200 px-6 py-2 text-center font-medium">
                                             No Records To Display!
                                         </td>
                                     </tr>
                                 )}
                                 <tr>
-                                    <th className="pl-5 py-3  text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
+                                    <th className="py-3 pl-5  text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-700">
                                         <div className="flex items-center justify-center">
-                                            <input
-                                                type="checkbox"
-                                                className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                onChange={() => selectUnselectAll()}
-                                                checked={selectedData.length == data.length}
-                                            />
+                                            <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" onChange={() => selectUnselectAll()} checked={selectedData.length == data.length} />
                                         </div>
                                     </th>
                                     {columns.map((column) => (
-                                        <th key={column.name} className="px-6 py-3  text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
+                                        <th key={column.name} className="px-6 py-3  text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-700">
                                             {column.name}
                                         </th>
                                     ))}
@@ -774,32 +708,26 @@ const Datatable = (props) => {
                             </tbody>
                         </table>
                     </div>
-                    <div className="flex flex-row justify-between mx-5 my-4 font-normal text-sm">
-                        <div className="w-1/2 flex md:justify-start sm:justify-center text-gray-600">
-                            <div className="rounded-md border border-gray-200 text-sm font-medium text-indigo-500 px-4 py-2">
+                    <div className="mx-5 my-4 flex flex-row justify-between text-sm font-normal">
+                        <div className="flex w-1/2 text-gray-600 sm:justify-center md:justify-start">
+                            <div className="rounded-md border border-gray-200 px-4 py-2 text-sm font-medium text-indigo-500">
                                 Showing page {router.query.page} of {pages}. {total} total records.
                             </div>
                         </div>
                         {pages > 0 && (
-                            <div className="w-1/2 flex md:justify-end sm:justify-center">
+                            <div className="flex w-1/2 sm:justify-center md:justify-end">
                                 <div className="flex gap-2 px-1">
-                                    <button className="rounded-full p-2 w-9 border border-gray-200  text-sm text-gray-500" onClick={gotoPreviousPage}>
+                                    <button className="w-9 rounded-full border border-gray-200 p-2  text-sm text-gray-500" onClick={gotoPreviousPage}>
                                         <ArrowLeftIcon className="h-4 w-4" aria-hidden="true" />
                                     </button>
                                     {Array(pages)
                                         .fill(1)
                                         .map((_, index) => (
-                                            <button
-                                                key={index}
-                                                className={`rounded-full p-2 w-9 border border-gray-200  text-sm  ${
-                                                    router.query.page == index + 1 ? "bg-indigo-500 text-white" : "bg-gray-100 text-gray-500"
-                                                }`}
-                                                onClick={() => setPage(index + 1)}
-                                            >
+                                            <button key={index} className={`w-9 rounded-full border border-gray-200 p-2  text-sm  ${router.query.page == index + 1 ? "bg-indigo-500 text-white" : "bg-gray-100 text-gray-500"}`} onClick={() => setPage(index + 1)}>
                                                 <span className="font-semibold">{index + 1}</span>
                                             </button>
                                         ))}
-                                    <button className="rounded-full p-2 w-9 border border-gray-200  text-sm text-gray-500" onClick={gotoNextPage}>
+                                    <button className="w-9 rounded-full border border-gray-200 p-2  text-sm text-gray-500" onClick={gotoNextPage}>
                                         <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
                                     </button>
                                 </div>
@@ -821,13 +749,13 @@ const Datatable = (props) => {
                 )}
             </SidePanel>
             <Modal open={deletingOpen} setOpen={deleteDismiss}>
-                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
-                        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                        <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                             <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
                         </div>
-                        <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                        <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
                                 Delete selected records?
                             </Dialog.Title>
                             <div className="mt-2">
@@ -836,19 +764,11 @@ const Datatable = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button
-                        type="button"
-                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                        onClick={() => deleteRecord()}
-                    >
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" onClick={() => deleteRecord()}>
                         Delete
                     </button>
-                    <button
-                        type="button"
-                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                        onClick={() => deleteDismiss(false)}
-                    >
+                    <button type="button" className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:mt-0 sm:w-auto sm:text-sm" onClick={() => deleteDismiss(false)}>
                         Cancel
                     </button>
                 </div>
@@ -860,13 +780,13 @@ const Datatable = (props) => {
                     setUpdatingStatus("");
                 }}
             >
-                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
-                        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-cyan-100 sm:mx-0 sm:h-10 sm:w-10">
+                        <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-cyan-100 sm:mx-0 sm:h-10 sm:w-10">
                             <ExclamationIcon className="h-6 w-6 text-cyan-600" aria-hidden="true" />
                         </div>
-                        <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                        <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
                                 Update Record Status?
                             </Dialog.Title>
                             <div className="mt-2">
@@ -877,40 +797,24 @@ const Datatable = (props) => {
                                     {({ open }) => (
                                         <>
                                             <Listbox.Label className="block text-sm font-medium text-gray-700">Status : </Listbox.Label>
-                                            <div className="mt-1 relative">
-                                                <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <div className="relative mt-1">
+                                                <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
                                                     <span className="block truncate">{updatingStatus}</span>
-                                                    <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                                        {/* <ChevronUpDown className="h-5 w-5 text-gray-400" ariaHidden="true"></ChevronUpDown> */}
-                                                    </span>
+                                                    <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">{/* <ChevronUpDown className="h-5 w-5 text-gray-400" ariaHidden="true"></ChevronUpDown> */}</span>
                                                 </Listbox.Button>
 
                                                 <Transition show={open} as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-                                                    <Listbox.Options className="absolute mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm z-50">
+                                                    <Listbox.Options className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                                                         {Object.keys(EApprovalState)
                                                             .filter((x) => !/^[0-9]+$/.test(x))
                                                             .map((val) => (
-                                                                <Listbox.Option
-                                                                    key={val}
-                                                                    className={({ active }) =>
-                                                                        classNames(
-                                                                            active ? "text-white bg-indigo-600" : "text-gray-900",
-                                                                            "cursor-default select-none relative py-2 pl-8 pr-4"
-                                                                        )
-                                                                    }
-                                                                    value={val}
-                                                                >
+                                                                <Listbox.Option key={val} className={({ active }) => classNames(active ? "bg-indigo-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-8 pr-4")} value={val}>
                                                                     {({ selected, active }) => (
                                                                         <>
                                                                             <span className={classNames(selected ? "font-semibold" : "font-normal", "block truncate")}>{val}</span>
 
                                                                             {selected ? (
-                                                                                <span
-                                                                                    className={classNames(
-                                                                                        active ? "text-white" : "text-indigo-600",
-                                                                                        "absolute inset-y-0 left-0 flex items-center pl-1.5"
-                                                                                    )}
-                                                                                >
+                                                                                <span className={classNames(active ? "text-white" : "text-indigo-600", "absolute inset-y-0 left-0 flex items-center pl-1.5")}>
                                                                                     <CheckIcon className="h-5 w-5" aria-hidden="true" />
                                                                                 </span>
                                                                             ) : null}
@@ -928,18 +832,13 @@ const Datatable = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button
-                        disabled={!updatingStatus || updatingStatus == ""}
-                        type="button"
-                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-cyan-600 text-base font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 sm:ml-3 sm:w-auto sm:text-sm"
-                        onClick={() => updateStatus()}
-                    >
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button disabled={!updatingStatus || updatingStatus == ""} type="button" className="inline-flex w-full justify-center rounded-md border border-transparent bg-cyan-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" onClick={() => updateStatus()}>
                         Update
                     </button>
                     <button
                         type="button"
-                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                        className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 sm:ml-3 sm:mt-0 sm:w-auto sm:text-sm"
                         onClick={() => {
                             setShowStatusUpdate(false);
                             setUpdatingStatus("");
