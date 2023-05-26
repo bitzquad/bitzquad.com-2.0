@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { LayoutSubPages } from "../../components";
-import Meta from "../../components/defaults/Meta";
+import Meta from "../../components/_common/meta";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";

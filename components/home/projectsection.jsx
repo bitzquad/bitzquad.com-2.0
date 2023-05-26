@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../elements/Button";
+import Button from "../elements/button";
 
 function ProjectSection() {
     return (
@@ -13,7 +13,7 @@ function ProjectSection() {
                     </Button>
                 </div>
             </div>
-            <div className="absolute top-0 left-0 -z-10 h-full w-full   ">
+            <div className="absolute left-0 top-0 -z-10 h-full w-full   ">
                 <img className="absolute z-20 h-full w-auto object-cover md:h-auto md:w-full" data-scroll data-scroll-speed="-3" src="/proj-sec-bg.webp" alt="Bitzquad project section background" />
             </div>
         </div>

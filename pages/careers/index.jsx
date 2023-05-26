@@ -209,11 +209,11 @@ const Index = ({ _collections }) => {
             <div className="md:pt-6 lg:py-12">
                 <h1 className="mb-4 text-center text-3xl font-bold text-gray-800 md:mb-0">Job Feed</h1>
                 <div className="py-t mx-auto flex flex-col justify-center gap-x-5 px-4 sm:px-6 md:px-8 md:pt-6 lg:flex-row lg:pt-12">
-                    <div className="mt-1 mb-2 flex w-full rounded-md shadow-sm lg:w-5/12">
+                    <div className="mb-2 mt-1 flex w-full rounded-md shadow-sm lg:w-5/12">
                         <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-700 px-4 font-semibold text-gray-700 sm:text-sm">What</span>
                         <input type="text" value={searchText} onChange={searchChange} placeholder="Keyword, job title, or company name" className="block  w-full rounded-r-md border-l-0 border-gray-700  py-3 shadow-sm focus:border-gray-700 focus:ring-0 sm:text-sm" />
                     </div>
-                    <div className="mt-1 mb-2 flex w-full rounded-md shadow-sm lg:w-5/12">
+                    <div className="mb-2 mt-1 flex w-full rounded-md shadow-sm lg:w-5/12">
                         <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-700 px-4 font-semibold text-gray-700 sm:text-sm">Where</span>
                         <select value={(searchObj && searchObj["place.country"]) || router.query["place.country"] || ""} onChange={locationChange} className="block w-full rounded-r-md border-l-0 border-gray-700  py-3 shadow-sm focus:border-gray-700 focus:ring-0 sm:text-sm">
                             <option selected disabled value={""}>
@@ -226,7 +226,7 @@ const Index = ({ _collections }) => {
                             ))}
                         </select>
                     </div>
-                    <div className="mt-1 mb-2 flex w-full rounded-md shadow-sm lg:w-auto">
+                    <div className="mb-2 mt-1 flex w-full rounded-md shadow-sm lg:w-auto">
                         <button disabled={loading} onClick={applyFilter} className="focus:shadow-outline-indigo flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600  px-4 py-2 text-base font-medium text-white transition duration-150 ease-in-out hover:bg-indigo-500 focus:border-indigo-700 focus:outline-none active:bg-indigo-700">
                             Find Jobs
                         </button>
@@ -330,7 +330,7 @@ const Index = ({ _collections }) => {
 
                     {searchObj && Object.keys(searchObj).length > 0 && (
                         <>
-                            <button onClick={clearFilter} className="focus:shadow-outline-indigo flex w-full items-center justify-center rounded-md border border-transparent border-indigo-500 bg-white px-4 py-2 text-base font-medium leading-6 text-indigo-600 transition duration-150 ease-in-out hover:bg-indigo-100 focus:border-indigo-700 focus:outline-none active:bg-indigo-700 md:w-auto">
+                            <button onClick={clearFilter} className="focus:shadow-outline-indigo flex w-full items-center justify-center rounded-md border border-indigo-500 border-transparent bg-white px-4 py-2 text-base font-medium leading-6 text-indigo-600 transition duration-150 ease-in-out hover:bg-indigo-100 focus:border-indigo-700 focus:outline-none active:bg-indigo-700 md:w-auto">
                                 Reset Filter
                             </button>
                         </>
@@ -343,7 +343,7 @@ const Index = ({ _collections }) => {
 
                     <div className="mt-4 flex flex-row">
                         <div className="felx w-full flex-col lg:min-w-[32rem] lg:max-w-[32rem]">
-                            {jobs && jobs.length > 0 && jobs?.map((job, index) => <SingleJobCard key={index} job={job} selected={job._id == viewJobData?._id} onClick={() => viewJob(job)} onDoubleClick={() => router.push(`/job/${job._id}`)}></SingleJobCard>)}
+                            {jobs && jobs.length > 0 && jobs?.map((job, index) => <SingleJobCard key={index} job={job} selected={job._id == viewJobData?._id} onClick={() => viewJob(job)} onDoubleClick={() => router.push(`/careers/${job._id}`)}></SingleJobCard>)}
 
                             {(!jobs || filterChange || jobs.length == 0) &&
                                 loading &&
@@ -351,7 +351,7 @@ const Index = ({ _collections }) => {
                                     .fill(1)
                                     .map((_, index) => <SingleJobCardLoading key={index}></SingleJobCardLoading>)}
                             {jobs && total > jobs.length && (
-                                <button disabled={loading} onClick={loadMore} className="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">
+                                <button disabled={loading} onClick={loadMore} className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">
                                     {loading ? "Loading..." : "Load More"}
                                 </button>
                             )}

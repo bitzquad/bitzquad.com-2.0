@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { LayoutSubPages } from "../../components";
 import projects from "../../constants/projects";
-import Meta from "../../components/defaults/Meta";
+import Meta from "../../components/_common/meta";
 import { useRouter } from "next/router";
 function Index() {
     const router = useRouter();

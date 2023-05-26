@@ -59,21 +59,19 @@ const Index = ({ job }) => {
     };
 
     return (
-        <main className="max-w-7xl mx-auto px-3 lg:px-10">
+        <main className="mx-auto max-w-7xl px-3 lg:px-10">
             <Head>
                 <title>{job?.name}</title>
             </Head>
             <div className="mt-3 lg:mt-10">
-                <div className="flex flex-col lg:flex-row lg:gap-x-6 text-gray-500">
+                <div className="flex flex-col text-gray-500 lg:flex-row lg:gap-x-6">
                     <div className="mt-5 w-1/3">
-                        <div className="aspect-w-1 aspect-h-1 bg-gray-50 rounded-lg overflow-hidden">
-                            <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${job._id}?key=${job.thumbnail.src}`} alt={job.name} className="object-center object-cover w-full" />
+                        <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-50">
+                            <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${job._id}?key=${job.thumbnail.src}`} alt={job.name} className="w-full object-cover object-center" />
                         </div>
                         <div className="mt-5">
-                            <h3 className="text-gray-800 font-bold text-xl">Here are some jobs that you may be interested in</h3>
-                            {jobs &&
-                                jobs.length > 0 &&
-                                jobs?.map((_job, index) => <SingleJobCard key={index} job={_job} selected={false} onClick={() => router.push(`/job/${_job._id}`)}></SingleJobCard>)}
+                            <h3 className="text-xl font-bold text-gray-800">Here are some jobs that you may be interested in</h3>
+                            {jobs && jobs.length > 0 && jobs?.map((_job, index) => <SingleJobCard key={index} job={_job} selected={false} onClick={() => router.push(`/careers/${_job._id}`)}></SingleJobCard>)}
 
                             {(!jobs || jobs.length == 0) &&
                                 loading &&

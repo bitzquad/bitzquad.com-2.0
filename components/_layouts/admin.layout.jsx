@@ -47,9 +47,6 @@ const Layout = ({ children }) => {
     return (
         <>
             <div>
-                <Head>
-                    <link rel="icon" href="./favicon.png"></link>
-                </Head>
                 <Transition.Root show={sidebarOpen} as={Fragment}>
                     <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
                         <Transition.Child as={Fragment} enter="transition-opacity ease-linear duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="transition-opacity ease-linear duration-300" leaveFrom="opacity-100" leaveTo="opacity-0">
@@ -60,14 +57,14 @@ const Layout = ({ children }) => {
                             <Transition.Child as={Fragment} enter="transition ease-in-out duration-300 transform" enterFrom="-translate-x-full" enterTo="translate-x-0" leave="transition ease-in-out duration-300 transform" leaveFrom="translate-x-0" leaveTo="-translate-x-full">
                                 <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-white">
                                     <Transition.Child as={Fragment} enter="ease-in-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in-out duration-300" leaveFrom="opacity-100" leaveTo="opacity-0">
-                                        <div className="absolute top-0 right-0 -mr-12 pt-2">
+                                        <div className="absolute right-0 top-0 -mr-12 pt-2">
                                             <button type="button" className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={() => setSidebarOpen(false)}>
                                                 <span className="sr-only">Close sidebar</span>
                                                 <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
                                             </button>
                                         </div>
                                     </Transition.Child>
-                                    <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
+                                    <div className="h-0 flex-1 overflow-y-auto pb-4 pt-5">
                                         <div className="flex flex-shrink-0 items-center justify-center px-4" onClick={() => router.push("/")}>
                                             <img className="h-8 w-auto" src="/logo-dark.webp" alt="Bitzquad" />
                                         </div>
@@ -79,7 +76,7 @@ const Layout = ({ children }) => {
                                                             onClick={() => {
                                                                 router.push(item.base);
                                                             }}
-                                                            className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md py-3 px-3 text-sm font-medium")}
+                                                            className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md px-3 py-3 text-sm font-medium")}
                                                         >
                                                             <item.icon className={classNames(item.current ? "text-gray-500" : "text-gray-400 group-hover:text-gray-500", "mr-5 h-6 w-6 flex-shrink-0")} aria-hidden="true" />
                                                             {item.name}
@@ -89,7 +86,7 @@ const Layout = ({ children }) => {
                                                     <Disclosure as="div" key={item.name} className="space-y-1">
                                                         {({ open }) => (
                                                             <>
-                                                                <Disclosure.Button className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md py-3 px-3 text-left text-sm font-medium")}>
+                                                                <Disclosure.Button className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md px-3 py-3 text-left text-sm font-medium")}>
                                                                     <item.icon className="mr-5 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
                                                                     <span className="flex-1">{item.name}</span>
                                                                     <svg className={classNames(open ? "rotate-90 text-gray-400" : "text-gray-300", "ml-3 h-5 w-5 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-gray-400")} viewBox="0 0 20 20" aria-hidden="true">
@@ -142,7 +139,7 @@ const Layout = ({ children }) => {
                 {/* Static sidebar for desktop */}
                 <div className={`hidden md:fixed md:inset-y-0 md:flex md:flex-col ${sidebarCollapse ? "z-10 w-16 hover:w-64 hover:shadow-xl" : "md:w-64"}`}>
                     <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
-                        <div className="flex flex-1 flex-col overflow-x-hidden pt-5 pb-4">
+                        <div className="flex flex-1 flex-col overflow-x-hidden pb-4 pt-5">
                             <div className="flex flex-shrink-0 items-center justify-center px-4">
                                 <img className="h-8 w-auto" src={sidebarCollapse ? "/logo.webp" : "/logo-dark.webp"} alt="Bitzquad" onClick={() => router.push("/")} />
                                 {sidebarCollapse ? <ArrowRightIcon className="absolute -right-4 h-8 w-8 rounded-full border border-gray-200 bg-white p-1 text-gray-500 hover:text-gray-700" aria-hidden="true" onClick={() => setSidebarCollapse(false)} /> : <ArrowLeftIcon className="absolute -right-4 h-8 w-8 rounded-full border border-gray-200 bg-white p-1 text-gray-500 hover:text-gray-700" aria-hidden="true" onClick={() => setSidebarCollapse(true)} />}
@@ -155,7 +152,7 @@ const Layout = ({ children }) => {
                                                 onClick={() => {
                                                     router.push(item.base);
                                                 }}
-                                                className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md py-3 px-3 text-sm font-medium")}
+                                                className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md px-3 py-3 text-sm font-medium")}
                                             >
                                                 <item.icon className={classNames(item.current ? "text-gray-500" : "text-gray-400 group-hover:text-gray-500", "mr-5 h-6 w-6 flex-shrink-0")} aria-hidden="true" />
                                                 {item.name}
@@ -165,7 +162,7 @@ const Layout = ({ children }) => {
                                         <Disclosure as="div" key={item.name} className="space-y-1">
                                             {({ open }) => (
                                                 <>
-                                                    <Disclosure.Button className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md py-3 px-3 text-left text-sm font-medium")}>
+                                                    <Disclosure.Button className={classNames(item.current ? "bg-gray-100 text-gray-900" : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900", "group flex w-full items-center rounded-md px-3 py-3 text-left text-sm font-medium")}>
                                                         <item.icon className="mr-5 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
                                                         <span className="flex-1">{item.name}</span>
                                                         <svg className={classNames(open ? "rotate-90 text-gray-400" : "text-gray-300", "ml-3 h-5 w-5 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-gray-400")} viewBox="0 0 20 20" aria-hidden="true">
@@ -211,7 +208,7 @@ const Layout = ({ children }) => {
                     </div>
                 </div>
                 <div className={`flex flex-1 flex-col ${sidebarCollapse ? "md:pl-16" : "md:pl-64"}`}>
-                    <div className="absolute top-0 right-0 z-10 bg-white pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
+                    <div className="absolute right-0 top-0 z-10 bg-white pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
                         <button type="button" className="mr-3 mt-3 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => setSidebarOpen(true)}>
                             <span className="sr-only">Open sidebar</span>
                             <MenuIcon className="h-6 w-6" aria-hidden="true" />

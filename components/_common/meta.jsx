@@ -1,7 +1,13 @@
+import Head from "next/head";
 export default function Meta(props) {
     return (
-        <>
+        <Head>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="canonical" href={props.url}></link>
+            <link href="/favicon.ico" rel="icon shortcut" type="image/x-icon"></link>
+            <link rel="apple-touch-icon" href="/favicon.ico"></link>
+            <title>{props.title}</title>
 
             {/* Google */}
             <meta name="title" content={props.title} />
@@ -27,6 +33,6 @@ export default function Meta(props) {
             <meta name="twitter:description" content={props.description} />
             <meta name="twitter:image" content={props.imagetw ? props.imagetw : props.imagefb} />
             <meta name="twitter:image:alt" content={props.alt} />
-        </>
+        </Head>
     );
 }

@@ -45,7 +45,7 @@ const Component = ({ job, loading }) => {
                     </div>
                     <DotsVerticalIcon className="w-5 h-5 absolute right-0 left-auto text-gray-800" />
                 </div>
-                <Link href={`/job/${job?._id}`}>
+                <Link href={`/careers/${job?._id}`}>
                     <h3 className="text-gray-800 font-bold text-xl hover:underline">{job?.name}</h3>
                 </Link>
                 <p className="text-gray-600 flex flex-row text-base align-middle">
