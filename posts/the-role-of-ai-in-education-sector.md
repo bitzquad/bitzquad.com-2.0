@@ -30,7 +30,7 @@ The use of AI in education can improve teaching and learning, offer more persona
 
 In this article, we will explore the various forms in which AI can revolutionize the education sector.
 
-## 1. Personalized Learning
+## Personalized Learning
 
 <img  src="\assets\img\blog\ai-in-education\ai-in-education-personalized-learning.webp"/>
 
@@ -38,7 +38,7 @@ Personalized learning is one of the most significant advantages of AI in educati
 
 For instance, adaptive learning algorithms are used by AI-powered educational platforms like [Knewton](https://www.knewton.com/) and [DreamBox](https://www.dreambox.com/) to design unique lesson plans for each student. These systems make use of data analytics to comprehend students' preferred learning methods and modify the content's level of difficulty accordingly.
 
-## 2. Automated Assessments
+## Automated Assessments
 
 <img  src="\assets\img\blog\ai-in-education\ai-assesments.jpg"/>
 
@@ -46,7 +46,7 @@ AI-powered assessments are another significant benefit of AI in education. AI al
 
 Moreover, AI-powered assessments can also provide more detailed feedback to students, identifying specific areas of improvement and suggesting personalized learning programs. This type of feedback can help students improve their learning outcomes and achieve their academic goals.
 
-## 3. Smart Content
+## Smart Content
 
 <img  src="\assets\img\blog\ai-in-education\ai-in-education-smart-content.jpg"/>
 
