@@ -7,10 +7,10 @@ import { MailIcon, PhoneIcon, LocationMarkerIcon, ArrowRightIcon, CheckIcon } fr
 
 import { motion } from "framer-motion";
 
-import axios from "axios";
-
 import Meta from "../../components/_common/meta";
 import { useRouter } from "next/router";
+
+import contact from "../../constants/fetch/contact";
 const Index = () => {
     const router = useRouter();
     const [Name, setName] = useState("");
@@ -23,11 +23,9 @@ const Index = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
-        const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, { data: { name: Name, email: Email, message: Msg } });
-        setShowSuccess(res.status >= 200 && res.status < 300);
-        setShowError(!(res.status >= 200 && res.status < 300));
-        setLoading(false);
+        const res = await contact.create({ name: { first: Name }, email: Email, message: Msg }, false, setLoading);
+        setShowSuccess(res != null);
+        setShowError(res == null);
         setName("");
         setEmail("");
         setMsg("");

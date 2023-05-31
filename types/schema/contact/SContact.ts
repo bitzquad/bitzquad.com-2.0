@@ -17,7 +17,7 @@ const Schema = new mongoose.Schema<CContact>(
         draft: { type: Boolean, default: false },
         deleted: { type: Boolean, default: false },
     },
-    { timestamps: true }
+    { timestamps: true },
 );
 
 export default mongoose.models.Contact || mongoose.model<CContact>("Contact", Schema);
