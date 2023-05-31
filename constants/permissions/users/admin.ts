@@ -24,7 +24,7 @@ updatePermission.immutableprops = ["_id", "owner", "draft", "deleted", "jobcount
 updatePermission.hiddenprops = ["__v", "deleted", "password"]; // Define the properties dont't need send to the client
 updatePermission.resolve = (query: any): { [key: string]: any } => {
     // Check if the user has the permission to update the collection
-    return { ...query, $or: [{ status: { $lt: EUsertype.admin } }, { _id: query.invokerid }], deleted: false };
+    return { ...query, _id: { $ne: query.invokerid }, deleted: false };
 };
 
 // Set delete permissions for the 'users' collection for the 'Admin' role
