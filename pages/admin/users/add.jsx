@@ -23,7 +23,7 @@ const CKEditor = dynamic(
     },
     {
         ssr: false,
-    }
+    },
 );
 
 // form component
@@ -52,8 +52,7 @@ const Add = (props) => {
 
     // get required collections
     const getCollections = async () => {
-        if (_collections == null)
-            _setCollections(await collectionfetcher.getCollections(["usergender", "userethnicity", "usercommunity", "usernationality", "countries"], () => {}));
+        if (_collections == null) _setCollections(await collectionfetcher.getCollections(["usergender", "userethnicity", "usercommunity", "usernationality", "countries"], () => {}));
     };
 
     // get required collection values
@@ -171,15 +170,13 @@ const Add = (props) => {
 
     // set styles for input fields
     const getInputSytle = (error) => {
-        return !error || error === ""
-            ? "block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
-            : "block w-full shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm border-red-300 rounded-md";
+        return !error || error === "" ? "block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" : "block w-full shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm border-red-300 rounded-md";
     };
     // get error message for input fields
     const getErrorStyle = (error) => {
         if (error && error !== "")
             return (
-                <div className="mt-2 pr-3 flex items-center pointer-events-none">
+                <div className="pointer-events-none mt-2 flex items-center pr-3">
                     <ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
                     <p className="ml-2 text-sm text-red-600">{error}</p>
                 </div>
@@ -196,73 +193,77 @@ const Add = (props) => {
             <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                 <div>
                     <div>
-                        <h3 className="text-lg leading-6 font-medium text-gray-900">Basic Information</h3>
+                        <h3 className="text-lg font-medium leading-6 text-gray-900">Basic Information</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
                     </div>
 
-                    <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
-                        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                    <div className="mt-6 space-y-6 sm:mt-5 sm:space-y-5">
+                        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                             <label htmlFor="name.first" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                 First name
                             </label>
-                            <div className="relative mt-1 sm:mt-0 sm:col-span-2">
-                                <input
-                                    type="text"
-                                    name="name.first"
-                                    id="name.first"
-                                    autoComplete="given-name"
-                                    placeholder="John"
-                                    className={getInputSytle(errors.name?.first)}
-                                    value={dataObj.name?.first}
-                                    onChange={handleChange}
-                                    readOnly={getReadOnly("name.first")}
-                                />
+                            <div className="relative mt-1 sm:col-span-2 sm:mt-0">
+                                <input type="text" name="name.first" id="name.first" autoComplete="given-name" placeholder="John" className={getInputSytle(errors.name?.first)} value={dataObj.name?.first} onChange={handleChange} readOnly={getReadOnly("name.first")} />
                                 {getErrorStyle(errors.name?.first)}
                             </div>
                         </div>
 
-                        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                             <label htmlFor="name.last" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                 Last name
                             </label>
-                            <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <input
-                                    type="text"
-                                    name="name.last"
-                                    id="name.last"
-                                    autoComplete="family-name"
-                                    placeholder="Doe"
-                                    className={getInputSytle(errors.name?.last)}
-                                    value={dataObj.name?.last}
-                                    onChange={handleChange}
-                                    readOnly={getReadOnly("name.last")}
-                                />
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <input type="text" name="name.last" id="name.last" autoComplete="family-name" placeholder="Doe" className={getInputSytle(errors.name?.last)} value={dataObj.name?.last} onChange={handleChange} readOnly={getReadOnly("name.last")} />
                                 {getErrorStyle(errors.name?.last)}
                             </div>
                         </div>
 
-                        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                 Email address
                             </label>
-                            <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    placeholder="john@example.com"
-                                    className={getInputSytle(errors.email)}
-                                    value={dataObj.email}
-                                    onChange={handleChange}
-                                    readOnly={getReadOnly("email")}
-                                />
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <input id="email" name="email" type="email" autoComplete="email" placeholder="john@example.com" className={getInputSytle(errors.email)} value={dataObj.email} onChange={handleChange} readOnly={getReadOnly("email")} />
                                 {getErrorStyle(errors.email)}
+                            </div>
+                        </div>
+
+                        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                Password
+                            </label>
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <input id="password" name="password" type="password" autoComplete="password" placeholder="123456" className={getInputSytle(errors.password)} value={dataObj.password} onChange={handleChange} readOnly={getReadOnly("password")} />
+                                {getErrorStyle(errors.password)}
+                            </div>
+                        </div>
+
+                        <div className="sm:grid sm:grid-cols-3 sm:items-center sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                            <label htmlFor="photo" className="block text-sm font-medium text-gray-700">
+                                Profile Picture
+                            </label>
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <div className="flex items-center">
+                                    <span className="h-12 w-12 overflow-hidden rounded-full bg-gray-100">
+                                        {dataObj.thumbnail && dataObj.thumbnail.src && <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${dataObj._id || "user"}${thumblstup}?key=${dataObj.thumbnail.src}`} alt="Profile Picture" className="h-full w-full" />}
+                                        {(!dataObj.thumbnail || !dataObj.thumbnail.src) && thumbnail ? (
+                                            <img src={thumbnail} alt="Profile Picture" className="h-full w-full" />
+                                        ) : (
+                                            <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>
+                                        )}
+                                    </span>
+                                    <input type="file" id="photo" name="photo" className="hidden" onChange={handleImage} accept="image/png, image/jpeg" />
+                                    <label htmlFor="photo" type="button" className="ml-5 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                        Change
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {/* 
                 <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                     <div>
                         <h3 className="text-lg leading-6 font-medium text-gray-900">Personal Information</h3>
@@ -523,9 +524,9 @@ const Add = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
+                {/* <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                     <div>
                         <h3 className="text-lg leading-6 font-medium text-gray-900">Other Information</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
@@ -624,7 +625,7 @@ const Add = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="pt-5">
@@ -634,14 +635,11 @@ const Add = (props) => {
                             props?.onCancel();
                         }}
                         type="button"
-                        className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         Cancel
                     </button>
-                    <button
-                        type="submit"
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <button type="submit" className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Save
                     </button>
                 </div>
