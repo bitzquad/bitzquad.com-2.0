@@ -2,7 +2,6 @@
 // import Auth from "@aws-amplify/auth";
 // import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth/lib/types";
 import axios from "axios";
-import CUser from "../../types/classes/user/CUser";
 
 // // sign in with email and password
 const signIn = async (email: string, password: string, loadingCallback: (loading: boolean) => void, options: any = {}) => {
