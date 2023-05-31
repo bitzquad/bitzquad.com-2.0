@@ -14,7 +14,7 @@ readPermission.allowed = true;
 readPermission.hiddenprops = ["__v", "deleted", "password"]; // Define the properties dont't need send  to the client
 readPermission.resolve = (query: any): { [key: string]: any } => {
     // Check if the user has the permission to read the collection
-    return { ...query, $or: [{ status: { $lt: EUsertype.admin } }, { _id: query.invokerid }], deleted: false };
+    return { ...query, deleted: false };
 };
 
 // Set update permissions for the 'users' collection for the 'Admin' role

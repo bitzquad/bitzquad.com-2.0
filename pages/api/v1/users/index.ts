@@ -118,9 +118,9 @@ async function handlePATCH(req: NextApiRequest, res: NextApiResponse) {
         const query = queryparser.Parse(req); // Parse the query string
         let filter = p.update.resolve({ ...query.search, invokerid: userId }); // Check the permissions & sanitize the request body
         let obj = p.resolveObject(req.body, p.update); // Sanitize the request body
-        if (obj?.status) {
-            if (obj?.status >= userType) obj.status = undefined;
-        }
+        // if (obj?.status) {
+        //     if (obj?.status >= userType) obj.status = undefined;
+        // }
         const resp = await Schema.updateMany({ ...filter }, { ...obj, draft: req.query.draft === "true" }, { new: true }); // Update the obj
 
         return res.status(200).json(resp);
