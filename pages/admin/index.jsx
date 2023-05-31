@@ -34,6 +34,7 @@ const SignIn = (props) => {
             }
         }
     };
+
     return (
         <div className="mt-10 flex flex-col bg-white px-8 md:py-10 lg:mt-24 lg:flex-row">
             {/* Picture  */}
@@ -62,7 +63,7 @@ const SignIn = (props) => {
                             <div className="mt-1">
                                 <input id="password" name="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
                             </div>
-                            {loginError == "" ? <></> : <span className="pt-1 pl-1 font-medium text-red-400">{loginError}</span>}
+                            {loginError == "" ? <></> : <span className="pl-1 pt-1 font-medium text-red-400">{loginError}</span>}
                         </div>
 
                         <div className="flex items-center justify-between">
