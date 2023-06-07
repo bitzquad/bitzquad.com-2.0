@@ -42,7 +42,7 @@ function Index({ posts }) {
                 the value of ideas of our clients and prospects."
             />
             <div className="bz-container relative mx-auto mt-0 h-full w-full bg-gray-50  md:bg-transparent lg:mt-44" data-scroll-section>
-                <div className=" py-10 px-5  lg:py-0">
+                <div className=" px-5 py-10  lg:py-0">
                     <h1 className="text-3xl font-semibold uppercase lg:text-5xl">BLOG</h1>
                     <p className="mt-4 text-sm tracking-widest text-gray-700 lg:mt-5 lg:text-xl xl:w-10/12">
                         At Bitzquad, we are passionate about gathering new knowledge in different areas. This is a capstone in optimising our operations while sharing new-found knowledge with society, where it shapes the future.
@@ -50,10 +50,10 @@ function Index({ posts }) {
                         <br /> This blog is proof of our minds flowing with mastery and experience to give what is best for the future.
                     </p>
                 </div>
-                <div className=" mb-20 grid grid-cols-1 gap-y-16 gap-x-10 px-5 pt-10 font-['Raleway'] md:grid-cols-2 lg:pt-20 xl:grid-cols-3">
+                <div className=" mb-20 grid grid-cols-1 gap-x-10 gap-y-16 px-5 pt-10 font-['Raleway'] md:grid-cols-2 lg:pt-20 xl:grid-cols-3">
                     {posts.slice(0, 1).map(({ frontmatter: blog, slug }, index) => (
                         <>
-                            <Link href={`/blog/${slug}`} key={index}>
+                            <Link href={`/${slug}`} key={index}>
                                 <div className="blog_card_large group">
                                     <div className="blog_card_large_img">
                                         <img src={blog.main_image} alt={blog.title} className="" />
@@ -78,7 +78,7 @@ function Index({ posts }) {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href={`/blog/${slug}`}>
+                            <Link href={`/${slug}`}>
                                 <div key={index} className="blog_card group lg:hidden">
                                     <div className="blog_card_image">
                                         <img src={blog.main_image} alt={blog.title} />
@@ -106,7 +106,7 @@ function Index({ posts }) {
                         </>
                     ))}
                     {posts.slice(1).map(({ frontmatter: blog, slug }, index) => (
-                        <Link key={index} href={`/blog/${slug}`}>
+                        <Link key={index} href={`/${slug}`}>
                             <div key={index} className="blog_card group">
                                 <div className="blog_card_image">
                                     <img src={blog.main_image} alt={blog.title} />

@@ -1,0 +1,58 @@
+import fs from "fs";
+import path from "path";
+
+const getBlogPostNames = () => {
+    const files = fs.readdirSync(path.join("posts"));
+    const posts = files.map((fileName) => {
+        const slug = fileName.replace(".md", "");
+        return { slug };
+    });
+    return posts;
+};
+
+const toTwoDigit = (num) => {
+    return num < 10 ? `0${num}` : num;
+};
+
+const generateSiteMap = () => {
+    const date = new Date();
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    xml += `<url><loc>https://www.bitzquad.com/</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/contact</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/about</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/projects</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/1</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/2</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/3</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/4</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/5</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/6</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/7</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/8</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/9</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/squad/10</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    xml += `<url><loc>https://www.bitzquad.com/blog</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    const posts = getBlogPostNames();
+    posts.forEach((post) => {
+        xml += `<url><loc>https://www.bitzquad.com/${post.slug}</loc><lastmod>${toTwoDigit(date.getFullYear())}-${toTwoDigit(date.getMonth())}-${toTwoDigit(date.getDay())}</lastmod></url>`;
+    });
+    xml += `</urlset>`;
+    return xml;
+};
+
+const SiteMap = () => {};
+
+export const getServerSideProps = async ({ res }) => {
+    const sitemap = generateSiteMap();
+    res.setHeader("Content-Type", "text/xml");
+    res.write(sitemap);
+    res.end();
+
+    return {
+        props: {},
+    };
+};
+
+export default SiteMap;
