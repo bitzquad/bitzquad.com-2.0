@@ -3,7 +3,7 @@ title: "Breaking Free: How to Overcome Social Media Addiction and Take Control o
 date: "Jan 28, 2023"
 excerpt: "What's a dopamine-driven feedback loop? How the social media use it to their benefit?"
 category: "Human-Computer Interaction"
-keywords: ""
+keywords: "Dopamine, Feedback, Engagement, Social media, Addictions, YouTube, Snapchat"
 read_duration: "3 minutes read"
 cover_image: "/assets/img/blog/dopamine-driven/dopamine-cover.webp"
 main_image: "/assets/img/blog/dopamine-driven/dopamine-main.webp"
