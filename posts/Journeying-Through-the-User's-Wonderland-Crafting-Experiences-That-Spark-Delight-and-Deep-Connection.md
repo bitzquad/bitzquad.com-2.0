@@ -3,6 +3,7 @@ title: "Journeying Through the User's Wonderland: Crafting Experiences That Spar
 date: "June 1, 2023"
 excerpt: "Imagine stepping into a digital realm where every click feels effortless, every interaction feels intuitive, and every moment leaves you wanting more. Welcome to the captivating world of UI/UX design, where the art of crafting user-centric experiences takes center stage. Whether you’re..."
 category: "UI/UX"
+keywords: "UI/UX design, User-centric experiences, Seamless interfaces, User experience, Conducting research, User personas, Design decisions, Sitemap, Flowchart,Wireframes, Color scheme, Typography, User testing"
 read_duration: "5 minutes read"
 cover_image: "/assets/img/blog/crafting-experiences/cover.jpeg"
 main_image: "/assets/img/blog/crafting-experiences/cover.jpeg"

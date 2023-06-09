@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { LayoutSubPages } from "../../components";
-import Meta from "../../components/defaults/Meta";
+import { LayoutSubPages } from "../components";
+import Meta from "../components/defaults/Meta";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
@@ -114,28 +114,21 @@ function PostPage({ frontmatter: meta, content, slug, sections }) {
 
     return (
         <LayoutSubPages>
-            <Meta
-                title={`Bitzquad | Blog - ${meta.title}`}
-                description={meta.excerpt}
-                keywords="Blog Bitzquad, Bitzquad, Solutions Beyond Technology, Software Company, Information Systems, Business Process Re-engineering, Branding, Digital Marketing, E-Business services"
-                url={`${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`}
-                imagefb={`${process.env.NEXT_PUBLIC_API_URL}${meta.main_image}`}
-                alt={meta.excerpt}
-            />
+            <Meta title={`Bitzquad | Blog - ${meta.title}`} description={meta.excerpt} keywords={`Blog Bitzquad, Bitzquad, ${meta.keywords}`} url={`${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`} imagefb={`${process.env.NEXT_PUBLIC_API_URL}${meta.main_image}`} alt={meta.excerpt} />
             <div className="mx-auto w-full font-['Raleway'] lg:mt-36 2xl:mt-44 ">
                 <motion.div className="progress-bar" style={{ scaleX }} />
                 <div className="relative">
                     <img src={meta.cover_image} className="absolute left-0 top-0 -z-10 h-full w-full object-cover" />
                     <div className="h-full w-full  bg-black bg-opacity-70 px-5 md:px-10 lg:px-0">
                         <div className="mx-auto max-w-[1080px]  py-20 lg:w-[57%]">
-                            <div className="flex flex-col gap-y-2 gap-x-7 pb-2 text-lg tracking-wider lg:flex-row lg:items-center lg:pb-0">
+                            <div className="flex flex-col gap-x-7 gap-y-2 pb-2 text-lg tracking-wider lg:flex-row lg:items-center lg:pb-0">
                                 <span className=" rounded py-1 font-semibold text-gray-400 lg:bg-purple-custom lg:px-3 lg:text-gray-700">{meta.category}</span>
                                 <span className=" font-semibold text-purple-custom">{meta.date}</span>
                                 <span className="text-base font-semibold text-gray-300">{meta.read_duration}</span>
                                 {analytics && <span className="text-base text-gray-300">{getViewsStr(analytics.views)} Reads</span>}
                             </div>
                             <h1 className="mt-2 font-semibold leading-snug text-gray-50 lg:mt-4 lg:text-5xl lg:font-bold lg:tracking-wider">{meta.title}</h1>
-                            <div className="mt-3 mb-2 flex items-center gap-x-3">
+                            <div className="mb-2 mt-3 flex items-center gap-x-3">
                                 <div className="aspect-square w-12 overflow-hidden rounded-full bg-indigo-400">
                                     <img className="h-full w-full object-cover" src={meta.writer_avatar} alt={meta.writer} />
                                 </div>
@@ -150,30 +143,21 @@ function PostPage({ frontmatter: meta, content, slug, sections }) {
                                         {meta.writer_social?.LinkedIn && (
                                             <a href={meta.writer_social?.LinkedIn}>
                                                 <svg className="h-6 w-6" width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M416 0H31.9C14.3 0 0 14.5 0 32.3V415.7C0 433.5 14.3 448 31.9 448H416C433.6 448 448 433.5 448 415.7V32.3C448 14.5 433.6 0 416 0ZM135.4 384H69V170.2H135.5V384H135.4ZM102.2 141C80.9 141 63.7 123.7 63.7 102.5C63.7 81.3 80.9 64 102.2 64C123.4 64 140.7 81.3 140.7 102.5C140.7 123.8 123.5 141 102.2 141ZM384.3 384H317.9V280C317.9 255.2 317.4 223.3 283.4 223.3C248.8 223.3 243.5 250.3 243.5 278.2V384H177.1V170.2H240.8V199.4H241.7C250.6 182.6 272.3 164.9 304.6 164.9C371.8 164.9 384.3 209.2 384.3 266.8V384Z"
-                                                        fill="currentColor"
-                                                    />
+                                                    <path d="M416 0H31.9C14.3 0 0 14.5 0 32.3V415.7C0 433.5 14.3 448 31.9 448H416C433.6 448 448 433.5 448 415.7V32.3C448 14.5 433.6 0 416 0ZM135.4 384H69V170.2H135.5V384H135.4ZM102.2 141C80.9 141 63.7 123.7 63.7 102.5C63.7 81.3 80.9 64 102.2 64C123.4 64 140.7 81.3 140.7 102.5C140.7 123.8 123.5 141 102.2 141ZM384.3 384H317.9V280C317.9 255.2 317.4 223.3 283.4 223.3C248.8 223.3 243.5 250.3 243.5 278.2V384H177.1V170.2H240.8V199.4H241.7C250.6 182.6 272.3 164.9 304.6 164.9C371.8 164.9 384.3 209.2 384.3 266.8V384Z" fill="currentColor" />
                                                 </svg>
                                             </a>
                                         )}
                                         {meta.writer_social?.Facebook && (
                                             <a href={meta.writer_social?.Facebook}>
                                                 <svg className="h-6 w-6" width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M400 0H48C35.2696 0 23.0606 5.05713 14.0589 14.0589C5.05713 23.0606 0 35.2696 0 48L0 400C0 412.73 5.05713 424.939 14.0589 433.941C23.0606 442.943 35.2696 448 48 448H185.25V295.69H122.25V224H185.25V169.36C185.25 107.21 222.25 72.88 278.92 72.88C306.06 72.88 334.44 77.72 334.44 77.72V138.72H303.17C272.36 138.72 262.75 157.84 262.75 177.45V224H331.53L320.53 295.69H262.75V448H400C412.73 448 424.939 442.943 433.941 433.941C442.943 424.939 448 412.73 448 400V48C448 35.2696 442.943 23.0606 433.941 14.0589C424.939 5.05713 412.73 0 400 0Z"
-                                                        fill="currentColor"
-                                                    />
+                                                    <path d="M400 0H48C35.2696 0 23.0606 5.05713 14.0589 14.0589C5.05713 23.0606 0 35.2696 0 48L0 400C0 412.73 5.05713 424.939 14.0589 433.941C23.0606 442.943 35.2696 448 48 448H185.25V295.69H122.25V224H185.25V169.36C185.25 107.21 222.25 72.88 278.92 72.88C306.06 72.88 334.44 77.72 334.44 77.72V138.72H303.17C272.36 138.72 262.75 157.84 262.75 177.45V224H331.53L320.53 295.69H262.75V448H400C412.73 448 424.939 442.943 433.941 433.941C442.943 424.939 448 412.73 448 400V48C448 35.2696 442.943 23.0606 433.941 14.0589C424.939 5.05713 412.73 0 400 0Z" fill="currentColor" />
                                                 </svg>
                                             </a>
                                         )}
                                         {meta.writer_social?.Twitter && (
                                             <a href={meta.writer_social?.Twitter}>
                                                 <svg className="h-6 w-6" width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M400 0H48C21.5 0 0 21.5 0 48V400C0 426.5 21.5 448 48 448H400C426.5 448 448 426.5 448 400V48C448 21.5 426.5 0 400 0ZM351.1 158.8C351.3 161.6 351.3 164.5 351.3 167.3C351.3 254 285.3 353.9 164.7 353.9C127.5 353.9 93 343.1 64 324.5C69.3 325.1 74.4 325.3 79.8 325.3C110.5 325.3 138.7 314.9 161.2 297.3C132.4 296.7 108.2 277.8 99.9 251.8C110 253.3 119.1 253.3 129.5 250.6C99.5 244.5 77 218.1 77 186.2V185.4C85.7 190.3 95.9 193.3 106.6 193.7C97.6043 187.716 90.2298 179.599 85.1347 170.072C80.0396 160.544 77.3823 149.904 77.4 139.1C77.4 126.9 80.6 115.7 86.3 106C118.6 145.8 167.1 171.8 221.5 174.6C212.2 130.1 245.5 94 285.5 94C304.4 94 321.4 101.9 333.4 114.7C348.2 111.9 362.4 106.4 375 98.9C370.1 114.1 359.8 126.9 346.2 135C359.4 133.6 372.2 129.9 384 124.8C375.1 137.9 363.9 149.5 351.1 158.8Z"
-                                                        fill="currentColor"
-                                                    />
+                                                    <path d="M400 0H48C21.5 0 0 21.5 0 48V400C0 426.5 21.5 448 48 448H400C426.5 448 448 426.5 448 400V48C448 21.5 426.5 0 400 0ZM351.1 158.8C351.3 161.6 351.3 164.5 351.3 167.3C351.3 254 285.3 353.9 164.7 353.9C127.5 353.9 93 343.1 64 324.5C69.3 325.1 74.4 325.3 79.8 325.3C110.5 325.3 138.7 314.9 161.2 297.3C132.4 296.7 108.2 277.8 99.9 251.8C110 253.3 119.1 253.3 129.5 250.6C99.5 244.5 77 218.1 77 186.2V185.4C85.7 190.3 95.9 193.3 106.6 193.7C97.6043 187.716 90.2298 179.599 85.1347 170.072C80.0396 160.544 77.3823 149.904 77.4 139.1C77.4 126.9 80.6 115.7 86.3 106C118.6 145.8 167.1 171.8 221.5 174.6C212.2 130.1 245.5 94 285.5 94C304.4 94 321.4 101.9 333.4 114.7C348.2 111.9 362.4 106.4 375 98.9C370.1 114.1 359.8 126.9 346.2 135C359.4 133.6 372.2 129.9 384 124.8C375.1 137.9 363.9 149.5 351.1 158.8Z" fill="currentColor" />
                                                 </svg>
                                             </a>
                                         )}
@@ -200,20 +184,14 @@ function PostPage({ frontmatter: meta, content, slug, sections }) {
                                         {meta.writer_social?.Behance && (
                                             <a href={meta.writer_social?.Behance}>
                                                 <svg className="h-6 w-6" width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M186.5 261C186.5 280.3 172.5 286.4 155.3 286.4H110.2V233.5H156.2C174.8 233.6 186.5 241.3 186.5 261ZM178.8 178.7C178.8 161 165.1 156.8 149.9 156.8H110.3V201.6H153C168.1 201.6 178.8 195 178.8 178.7ZM311.1 201.9C292.8 201.9 280.6 213.3 279.4 231.6H341.6C339.9 213.1 330.3 201.9 311.1 201.9ZM448 48V400C448 426.5 426.5 448 400 448H48C21.5 448 0 426.5 0 400V48C0 21.5 21.5 0 48 0H400C426.5 0 448 21.5 448 48ZM271.7 153H349.5V134.1H271.7V153ZM228.7 263.3C228.7 239.2 217.3 218.4 193.7 211.7C210.9 203.5 219.9 194 219.9 174.7C219.9 136.5 191.4 127.2 158.5 127.2H68V319.2H161.1C196 319 228.7 302.3 228.7 263.3ZM380 248.5C380 207.4 355.9 173.1 312.4 173.1C270 173.1 241.3 204.9 241.3 246.7C241.3 290 268.6 319.7 312.4 319.7C345.6 319.7 367.1 304.8 377.5 272.9H343.8C340.1 284.8 325.2 291 313.6 291C291.2 291 279.5 277.9 279.5 255.7H379.7C379.8 253.4 380 250.9 380 248.5Z"
-                                                        fill="currentColor"
-                                                    />
+                                                    <path d="M186.5 261C186.5 280.3 172.5 286.4 155.3 286.4H110.2V233.5H156.2C174.8 233.6 186.5 241.3 186.5 261ZM178.8 178.7C178.8 161 165.1 156.8 149.9 156.8H110.3V201.6H153C168.1 201.6 178.8 195 178.8 178.7ZM311.1 201.9C292.8 201.9 280.6 213.3 279.4 231.6H341.6C339.9 213.1 330.3 201.9 311.1 201.9ZM448 48V400C448 426.5 426.5 448 400 448H48C21.5 448 0 426.5 0 400V48C0 21.5 21.5 0 48 0H400C426.5 0 448 21.5 448 48ZM271.7 153H349.5V134.1H271.7V153ZM228.7 263.3C228.7 239.2 217.3 218.4 193.7 211.7C210.9 203.5 219.9 194 219.9 174.7C219.9 136.5 191.4 127.2 158.5 127.2H68V319.2H161.1C196 319 228.7 302.3 228.7 263.3ZM380 248.5C380 207.4 355.9 173.1 312.4 173.1C270 173.1 241.3 204.9 241.3 246.7C241.3 290 268.6 319.7 312.4 319.7C345.6 319.7 367.1 304.8 377.5 272.9H343.8C340.1 284.8 325.2 291 313.6 291C291.2 291 279.5 277.9 279.5 255.7H379.7C379.8 253.4 380 250.9 380 248.5Z" fill="currentColor" />
                                                 </svg>
                                             </a>
                                         )}
                                         {meta.writer_social?.Youtube && (
                                             <a href={meta.writer_social?.Youtube}>
                                                 <svg className="h-6 w-6" width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M186.8 170.1L282 224.2L186.8 278.3V170.1ZM448 48V400C448 426.5 426.5 448 400 448H48C21.5 448 0 426.5 0 400V48C0 21.5 21.5 0 48 0H400C426.5 0 448 21.5 448 48ZM406 224.3C406 224.3 406 164.7 398.4 136.1C394.2 120.3 381.9 107.9 366.2 103.7C337.9 96 224 96 224 96C224 96 110.1 96 81.8 103.7C66.1 107.9 53.8 120.3 49.6 136.1C42 164.6 42 224.3 42 224.3C42 224.3 42 283.9 49.6 312.5C53.8 328.3 66.1 340.2 81.8 344.4C110.1 352 224 352 224 352C224 352 337.9 352 366.2 344.3C381.9 340.1 394.2 328.2 398.4 312.4C406 283.9 406 224.3 406 224.3Z"
-                                                        fill="currentColor"
-                                                    />
+                                                    <path d="M186.8 170.1L282 224.2L186.8 278.3V170.1ZM448 48V400C448 426.5 426.5 448 400 448H48C21.5 448 0 426.5 0 400V48C0 21.5 21.5 0 48 0H400C426.5 0 448 21.5 448 48ZM406 224.3C406 224.3 406 164.7 398.4 136.1C394.2 120.3 381.9 107.9 366.2 103.7C337.9 96 224 96 224 96C224 96 110.1 96 81.8 103.7C66.1 107.9 53.8 120.3 49.6 136.1C42 164.6 42 224.3 42 224.3C42 224.3 42 283.9 49.6 312.5C53.8 328.3 66.1 340.2 81.8 344.4C110.1 352 224 352 224 352C224 352 337.9 352 366.2 344.3C381.9 340.1 394.2 328.2 398.4 312.4C406 283.9 406 224.3 406 224.3Z" fill="currentColor" />
                                                 </svg>
                                             </a>
                                         )}
@@ -228,7 +206,7 @@ function PostPage({ frontmatter: meta, content, slug, sections }) {
                         </div>
                     </div>
                 </div>
-                <div className="bz-container mt-0 mb-20 flex justify-center gap-x-5">
+                <div className="bz-container mb-20 mt-0 flex justify-center gap-x-5">
                     <article ref={ref} className=" text-[#181B3C]  lg:w-3/4">
                         <Markdown>{content}</Markdown>
                     </article>
