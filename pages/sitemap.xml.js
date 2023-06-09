@@ -2,11 +2,15 @@ import fs from "fs";
 import path from "path";
 
 const getBlogPostNames = () => {
-    const files = fs.readdirSync(path.join("posts"));
-    const posts = files.map((fileName) => {
-        const slug = fileName.replace(".md", "");
-        return { slug };
-    });
+    let posts = [];
+    let files = null;
+    if (fs.existsSync(path.join("posts"))) files = fs.readdirSync(path.join("posts"));
+    else if (fs.existsSync(path.join("../posts"))) files = fs.readdirSync(path.join("../posts"));
+    if (files)
+        posts = files.map((fileName) => {
+            const slug = fileName.replace(".md", "");
+            return { slug };
+        });
     return posts;
 };
 
