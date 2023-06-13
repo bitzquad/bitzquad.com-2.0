@@ -1,0 +1,11 @@
+.marquee {
+    animation: marquee-ani 20s linear infinite;
+}
+@keyframes marquee-ani {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translatex(-140%);
+    }
+}
