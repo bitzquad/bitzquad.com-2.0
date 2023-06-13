@@ -1,5 +1,5 @@
 import React from "react";
-import { LayoutSubPages } from "../../../components";
+import { Button, LayoutSubPages } from "../../../components";
 import Meta from "../../../components/defaults/Meta";
 import { useRouter } from "next/router";
 import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
@@ -39,7 +39,7 @@ const Index = () => {
             <LayoutSubPages>
                 <Meta title="Bitzquad | Information Systems" description="Bitzquad Information Systems fulfill all back office, middle office and front office requirements in increasing productivity and sharing real-time information across business functions." />
                 <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
-                    <div className="mx-auto max-w-7xl">
+                    <div className="mx-auto">
                         <div className="mx-auto max-w-2xl lg:mx-0">
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Information Systems</h1>
                             <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Information Systems are dominating the automation of routine work. Not only everyday work but also enterprise decision-making. Let’s harvest the best out of your stake with Bitzquad.&quot;</p>
@@ -58,7 +58,7 @@ const Index = () => {
                             <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl  lg:pb-8">Our Approach</h2>
                             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-2">
                                 {features.map((feature) => (
-                                    <div key={feature.name} className="flex flex-col rounded-xl bg-white p-5 shadow-2xl duration-200 ease-in hover:scale-105 ">
+                                    <div key={feature.name} className="flex flex-col rounded-xl bg-white p-5  duration-200 ease-in hover:scale-105 ">
                                         <dt className="text-lg font-semibold leading-7 text-gray-900">
                                             {/* <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                                                 <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -106,16 +106,28 @@ const Index = () => {
                                 <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nodejs.png" alt="NodeJS" width={200} height={113} />
                                 <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/react.png" alt="React" width={200} height={113} />
                                 {/* End */}
+                                {/* Start */}
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nextjs.png" alt="NextJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/vercel.png" alt="Vercel" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/html.png" alt="HTML" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/css.png" alt="CSS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/js.png" alt="JS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/tailwind.png" alt="Tailwind" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/figma.png" alt="Figma" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/aws.png" alt="AWS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/mongodb.png" alt="MongoDB" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nodejs.png" alt="NodeJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/react.png" alt="React" width={200} height={113} />
+                                {/* End */}
                             </div>
                         </div>
 
-                        <div className="mx-auto mb-16 mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
+                        <div className="lg:mt-15 mx-auto mb-16 mt-10 max-w-2xl sm:mt-20 lg:max-w-none">
                             <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">Is this your next step to grow your business?</h4>
                             <p className=" text-lg leading-8 text-gray-600">
-                                <Link href="/contact">
-                                    <span className="font-bold italic underline hover:cursor-pointer">Contact us</span>
-                                </Link>{" "}
-                                to know more!
+                                <Button className="talk-btn text-purple-600" parentClassName="px-0" href="/contact">
+                                    Let&apos;s Talk
+                                </Button>
                             </p>
                         </div>
                     </div>
