@@ -2,100 +2,125 @@ import React from "react";
 import { LayoutSubPages } from "../../../components";
 import Meta from "../../../components/defaults/Meta";
 import { useRouter } from "next/router";
+import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
+import Link from "next/link";
+
+const features = [
+    {
+        name: "Shared Vision",
+        description: "We believe that sharing the same vision as our clients is key to the success of the outcome. Reaching the desired destination of our customers in the most cost-beneficial way is our goal for you.",
+        href: "#",
+        icon: InboxIcon,
+    },
+    {
+        name: "Transparency",
+        description: "Transparency is one of the primary values of Bitzquad, and we respect your right to know. We approach the projects in a transparent way where you can see through the project. ",
+        href: "#",
+        icon: UsersIcon,
+    },
+    {
+        name: "Cross Collaboration",
+        description: "Our approach spans different expert teams of Bitzquad to ensure the project gets the best inputs and technologies available.",
+        href: "#",
+        icon: TrashIcon,
+    },
+    {
+        name: "Agility",
+        description: "A setback? Still, we got it. Bitzquad's solution-oriented, fast-moving practices within teams are a strength which keeps us ahead in finding the most suitable alternative for the setback.",
+        href: "#",
+        icon: TrashIcon,
+    },
+];
 
 const Index = () => {
-  const router = useRouter();
-  return (
-    <>
-      <LayoutSubPages>
-        <Meta
-          title="Bitzquad | Contact Us"
-          description="Want to inquire about your new project or get to know us better? Contact us directly or write to us."
-          keywords="Bitzquad, Contact Bitzquad,  Solutions Beyond Technology, Software Company, Information Systems, Business Process Re-engineering, Branding, Digital Marketing, E-Business services"
-          url={`${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`}
-          imagefb={`${process.env.NEXT_PUBLIC_API_URL}/og-img.webp`}
-          alt="Want to inquire about your new project or get to know us better? Contact us directly or write to us."
-        />
-        <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
-          <div className="mx-0 py-10 md:mx-5  lg:py-0">
-            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">
-              E-Business
-            </h1>
-            <p className="mt-4 text-sm tracking-widest text-gray-700 lg:mt-5 lg:text-xl xl:w-8/12">
-              Information Systems are dominating the automation of routine work.
-              Not only everyday work but also enterprise decision-making.
-              Let&lsquo;s harvest the best out of your stake with Bitzquad.{" "}
-              <br></br>
-              It was well worth the wait. Let&lsquo;s get started.
-            </p>
-            <p className="mt-4 text-sm tracking-widest text-gray-700 lg:mt-5 lg:text-xl">
-              We specially develop bespoke EdTech Platforms such as Learning
-              Management Systems, Human Resource Management Systems and Customer
-              Relationship Management Systems. These systems benefit enterprises
-              in their decision-making and customer handling. Bitzquad has a
-              well-defined methodology for connecting with the project
-              stakeholders to ensure the promised product is delivered. Our
-              competent team is ready to take you through a digital journey
-              beyond your expectations.
-              <p>
-                Feugiat in ante metus dictum at tempor commodo ullamcorper a.
-                Faucibus interdum posuere lorem ipsum dolor sit. Augue eget arcu
-                dictum varius duis at. Lectus vestibulum mattis ullamcorper
-                velit sed. Tempus urna et pharetra pharetra massa. Dictumst
-                quisque sagittis purus sit amet volutpat consequat. Cursus
-                mattis molestie a iaculis at erat pellentesque adipiscing.
-                Semper eget duis at tellus at urna condimentum mattis
-                pellentesque. Nec ultrices dui sapien eget mi proin sed.
-                Tristique senectus et netus et malesuada fames ac turpis
-                egestas. Ut eu sem integer vitae justo eget magna fermentum
-                iaculis. Amet purus gravida quis blandit turpis. Nibh venenatis
-                cras sed felis eget velit. Nisl suscipit adipiscing bibendum
-                est. Odio facilisis mauris sit amet massa vitae tortor
-                condimentum. In nibh mauris cursus mattis molestie a iaculis.
-                Ultrices neque ornare aenean euismod. Aenean pharetra magna ac
-                placerat vestibulum lectus. Aenean pharetra magna ac placerat
-                vestibulum lectus. Interdum consectetur libero id faucibus nisl.
-                Nisl vel pretium lectus quam. Purus sit amet volutpat consequat.
-                Enim nec dui nunc mattis enim ut tellus elementum. Quis eleifend
-                quam adipiscing vitae proin sagittis. Quisque sagittis purus sit
-                amet volutpat consequat mauris nunc. Risus at ultrices mi tempus
-                imperdiet nulla malesuada.
-              </p>
-              Enim nunc faucibus a pellentesque sit. Mattis molestie a iaculis
-              at erat pellentesque adipiscing commodo. Egestas diam in arcu
-              cursus euismod quis viverra nibh cras. Diam vulputate ut pharetra
-              sit. Gravida dictum fusce ut placerat. Suspendisse interdum
-              consectetur libero id. Eget felis eget nunc lobortis mattis
-              aliquam. Et leo duis ut diam quam nulla porttitor massa. Odio ut
-              enim blandit volutpat maecenas volutpat blandit. Curabitur vitae
-              nunc sed velit dignissim sodales ut. Habitant morbi tristique
-              senectus et netus et malesuada. Gravida arcu ac tortor dignissim
-              convallis aenean et tortor at. Facilisis gravida neque convallis
-              a. Tristique risus nec feugiat in fermentum posuere urna nec.
-              Ullamcorper sit amet risus nullam eget felis eget nunc. Purus sit
-              amet luctus venenatis lectus. Massa id neque aliquam vestibulum
-              morbi blandit cursus. Adipiscing diam donec adipiscing tristique
-              risus nec. Fermentum iaculis eu non diam. Risus nullam eget felis
-              eget nunc lobortis mattis aliquam. Velit sed ullamcorper morbi
-              tincidunt. Pretium lectus quam id leo in vitae turpis massa sed.
-              Sapien nec sagittis aliquam malesuada bibendum arcu vitae
-              elementum. Mi in nulla posuere sollicitudin aliquam ultrices
-              sagittis orci a. Gravida cum sociis natoque penatibus et magnis
-              dis parturient montes. Nibh praesent tristique magna sit amet
-              purus gravida quis blandit. Non odio euismod lacinia at quis risus
-              sed vulputate odio. Blandit turpis cursus in hac habitasse platea.
-              Enim ut tellus elementum sagittis. Gravida cum sociis natoque
-              penatibus et magnis dis. Semper viverra nam libero justo. Enim
-              diam vulputate ut pharetra sit. Diam in arcu cursus euismod quis
-              viverra nibh cras. Nunc vel risus commodo viverra maecenas
-              accumsan lacus vel. Rhoncus urna neque viverra justo nec ultrices
-              dui sapien eget.
-            </p>
-          </div>
-        </div>
-      </LayoutSubPages>
-    </>
-  );
+    const router = useRouter();
+    return (
+        <>
+            <LayoutSubPages>
+                <Meta title="Bitzquad | E-Business" description="Bitzquad provides bespoke E-Business models covering all your functions to achieve an optimal output. Save time and energy and invest in better growth with Bitzquad. Our competent team is ready to take you through an unmatchable journey." />
+                <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="mx-auto max-w-2xl lg:mx-0">
+                            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">E-Business</h1>
+                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;E-Business utilizes digital information and advanced communication technologies to streamline different business processes. It is an integration of the whole business over a computer mediated network. It replaces many manual systems and automates interconnected operations. &quot;</p>
+                        </div>
+                        <div className="mx-auto">
+                            <p className="mt-6 text-lg leading-8 text-gray-600">Are you a futuristic organization which strives to achieve optimal efficiency in your business functions? The E-Business model is the best solution for you.</p>
+                            <p className="mt-6 text-lg leading-8 text-gray-600">Bitzquad provides bespoke E-Business models covering all your functions to achieve an optimal output. Save time and energy and invest in better growth with Bitzquad. Our competent team is ready to take you through an unmatchable journey.</p>
+                        </div>
+                        {/* <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
+                            <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:pb-8">Your IS Journey with Us</h2>
+                            <img src="/services-exp.webp" alt="App screenshot" className="mx-auto rounded-xl ring-1 ring-white/10 lg:max-w-3xl" width={2432} height={1442} />
+                        </div> */}
+                        <div className="mx-auto mt-8  max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
+                            <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl  lg:pb-8">Our Approach</h2>
+                            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-2">
+                                {features.map((feature) => (
+                                    <div key={feature.name} className="flex flex-col rounded-xl bg-white p-5 shadow-2xl duration-200 ease-in hover:scale-105 ">
+                                        <dt className="text-lg font-semibold leading-7 text-gray-900">
+                                            {/* <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                                <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                                            </div> */}
+                                            {feature.name}
+                                        </dt>
+                                        <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                                            <p className="flex-auto">{feature.description}</p>
+                                            {/* <p className="mt-6">
+                                                <a href={feature.href} className="text-sm font-semibold leading-6 text-indigo-600">
+                                                    Learn more <span aria-hidden="true">→</span>
+                                                </a>
+                                            </p> */}
+                                        </dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
+                        <div className="mx-auto mb-16 mt-8 max-w-2xl overflow-hidden sm:mt-20 lg:mt-10 lg:max-w-none">
+                            <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:pb-8">Our Tech Stack</h2>
+                            <div className="marquee mx-auto flex max-w-lg items-center  gap-x-16 gap-y-10  sm:max-w-xl lg:mx-0 lg:max-w-none">
+                                {/* Start */}
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nextjs.png" alt="NextJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/vercel.png" alt="Vercel" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/html.png" alt="HTML" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/css.png" alt="CSS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/js.png" alt="JS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/tailwind.png" alt="Tailwind" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/figma.png" alt="Figma" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/aws.png" alt="AWS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/mongodb.png" alt="MongoDB" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nodejs.png" alt="NodeJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/react.png" alt="React" width={200} height={113} />
+                                {/* End */}
+                                {/* Start */}
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nextjs.png" alt="NextJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/vercel.png" alt="Vercel" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/html.png" alt="HTML" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/css.png" alt="CSS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/js.png" alt="JS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/tailwind.png" alt="Tailwind" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/figma.png" alt="Figma" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/aws.png" alt="AWS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/mongodb.png" alt="MongoDB" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/nodejs.png" alt="NodeJS" width={200} height={113} />
+                                <img className=" max-h-20 w-full object-contain " src="/assets/img/techstack/react.png" alt="React" width={200} height={113} />
+                                {/* End */}
+                            </div>
+                        </div>
+
+                        <div className="mx-auto mb-16 mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
+                            <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">Thinking about streamlining your business processes?</h4>
+                            <p className=" text-lg leading-8 text-gray-600">
+                                <Link href="/contact">
+                                    <span className="font-bold italic underline hover:cursor-pointer">Contact us</span>
+                                </Link>{" "}
+                                to know more!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </LayoutSubPages>
+        </>
+    );
 };
 
 export default Index;
