@@ -1,63 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.bitzquad.com/</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/contact</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/about</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/projects</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/1</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/2</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/3</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/4</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/5</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/6</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/7</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/8</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/9</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/squad/10</loc>
-    </url>
-    <url>
-        <loc>https://www.bitzquad.com/squad/11</loc>
-    </url>
-    <url>
-        <loc>https://www.bitzquad.com/squad/12</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
         <loc>https://www.bitzquad.com/blog</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
-        <loc>https://www.bitzquad.com/blog/ed-trends-waiting-to-say-hello-in-2023</loc>
+        <loc>https://www.bitzquad.com/ed-trends-waiting-to-say-hello-in-2023</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
     <url>
-        <loc>https://www.bitzquad.com/blog/how-going-serverless-will-help-your-business</loc>
+        <loc>https://www.bitzquad.com/how-going-serverless-will-help-your-business</loc>
+        <lastmod>2023-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.bitzquad.com/Journeying-Through-the-User's-Wonderland-Crafting-Experiences-That-Spark-Delight-and-Deep-Connection</loc>
+        <lastmod>2023-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.bitzquad.com/social-media-addiction-and-dopamine-driven-feedback-loops</loc>
+        <lastmod>2023-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.bitzquad.com/storytelling-powerful-technique-for-transmitting-knowledge</loc>
+        <lastmod>2023-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.bitzquad.com/the-role-of-ai-in-education-sector</loc>
+        <lastmod>2023-05-01</lastmod>
     </url>
 </urlset>

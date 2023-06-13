@@ -3,6 +3,7 @@ title: "The Magic of Storytelling: How to Captivate Students and Enhance Learnin
 date: "Mar 01, 2023"
 excerpt: "Storytelling is the oldest form of communication, used to pass down knowledge and cultural values from generation to generation. Stories can be used in various settings, including educational settings, to engage learners, enhance retention, and convey complex information in an easily digestible way. In this article, we will explore the power of storytelling in education, examine its benefits and potential drawbacks, and provide tips on how to effectively use storytelling in the classroom."
 category: "Education"
+keywords: "Storytelling, Transmitting knowledge, Education, Learning through experience, Student engagement, Real-life situations, Experience based learning"
 read_duration: "5 minutes read"
 cover_image: "/assets/img/blog/storytelling/cover.webp"
 main_image: "/assets/img/blog/storytelling/main.webp"
