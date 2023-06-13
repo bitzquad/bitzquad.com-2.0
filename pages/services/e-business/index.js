@@ -42,10 +42,10 @@ const Index = () => {
                     <div className="mx-auto max-w-7xl">
                         <div className="mx-auto max-w-2xl lg:mx-0">
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">E-Business</h1>
-                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;E-Business utilizes digital information and advanced communication technologies to streamline different business processes. It is an integration of the whole business over a computer mediated network. It replaces many manual systems and automates interconnected operations. &quot;</p>
+                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Are you a futuristic organization which strives to achieve optimal efficiency in your business functions? The E-Business model is the best solution for you.&quot;</p>
                         </div>
                         <div className="mx-auto">
-                            <p className="mt-6 text-lg leading-8 text-gray-600">Are you a futuristic organization which strives to achieve optimal efficiency in your business functions? The E-Business model is the best solution for you.</p>
+                            <p className="mt-6 text-lg leading-8 text-gray-600">E-Business utilizes digital information and advanced communication technologies to streamline different business processes. It is an integration of the whole business over a computer mediated network. It replaces many manual systems and automates interconnected operations.</p>
                             <p className="mt-6 text-lg leading-8 text-gray-600">Bitzquad provides bespoke E-Business models covering all your functions to achieve an optimal output. Save time and energy and invest in better growth with Bitzquad. Our competent team is ready to take you through an unmatchable journey.</p>
                         </div>
                         {/* <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
