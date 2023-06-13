@@ -41,7 +41,7 @@ const Index = () => {
                 <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
                     <div className="mx-auto ">
                         <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Business Process Re-engineering</h1>
+                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Business Process Re-engineering</h1>
                             <p className="mt-6 text-lg italic leading-8 text-gray-600">
                                 &quot;Business Process Re-engineering (BPR) is the revolutionary redesign of business processes to improve critical elements such as <b>quality, output, cost, service,</b> and <b>speed</b>. BPR aims to cut down enterprise costs and process redundancies on a vast scale.&quot;
                             </p>

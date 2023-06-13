@@ -41,7 +41,7 @@ const Index = () => {
                 <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
                     <div className="mx-auto">
                         <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Brand Designing & Digital Marketing</h1>
+                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Brand Designing & Digital Marketing</h1>
                             <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Brand designing creates unique key brand elements, such as the logo, colour scheme, typography, and other design components recognizable to consumers and stand out among competitors. Digital marketing is capturing leads and selling your product to the target market using digital channels.&quot;</p>
                         </div>
                         <div className="mx-auto">
