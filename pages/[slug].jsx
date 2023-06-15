@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-<<<<<<<< HEAD:pages/blog/[slug].jsx
-import { LayoutSubPages } from "../../components";
-import Meta from "../../components/_common/meta";
-========
 import { LayoutSubPages } from "../components";
-import Meta from "../components/defaults/Meta";
->>>>>>>> main:pages/[slug].js
+import Meta from "../components/_common/meta";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
@@ -119,11 +114,9 @@ function PostPage({ frontmatter: meta, content, slug, sections }) {
 
     return (
         <LayoutSubPages>
-<<<<<<<< HEAD:pages/blog/[slug].jsx
-            <Meta title={`Bitzquad | Blog - ${meta.title}`} description={meta.excerpt} keywords="Blog Bitzquad, Bitzquad, Solutions Beyond Technology, Software Company, Information Systems, Business Process Re-engineering, Branding, Digital Marketing, E-Business services" url={`${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`} imagefb={`${process.env.NEXT_PUBLIC_API_URL}${meta.main_image}`} alt={meta.excerpt} />
-========
+
             <Meta title={`Bitzquad | Blog - ${meta.title}`} description={meta.excerpt} keywords={`Blog Bitzquad, Bitzquad, ${meta.keywords}`} url={`${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`} imagefb={`${process.env.NEXT_PUBLIC_API_URL}${meta.main_image}`} alt={meta.excerpt} />
->>>>>>>> main:pages/[slug].js
+
             <div className="mx-auto w-full font-['Raleway'] lg:mt-36 2xl:mt-44 ">
                 <motion.div className="progress-bar" style={{ scaleX }} />
                 <div className="relative">

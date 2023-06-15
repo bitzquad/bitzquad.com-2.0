@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, LayoutSubPages } from "../../../components";
-import Meta from "../../../components/defaults/Meta";
+import Meta from "../../../components/_common/meta";
 import { useRouter } from "next/router";
 import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
 import Link from "next/link";
@@ -37,18 +37,23 @@ const Index = () => {
     return (
         <>
             <LayoutSubPages>
-                <Meta title="Bitzquad | Information Systems" description="Bitzquad Information Systems fulfill all back office, middle office and front office requirements in increasing productivity and sharing real-time information across business functions." />
+                <Meta title="Bitzquad | Brand Designing & Digital Marketing" description="Brand designing and digital marketing with Bitzquad is a best choice if you want to make your brand and product stand out in the competition. Our experienced and skilled team is ready to take you through a unique journey to ensure your brand gets enriched value." />
                 <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
                     <div className="mx-auto">
                         <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Information Systems</h1>
-                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Information Systems are dominating the automation of routine work. Not only everyday work but also enterprise decision-making. Let’s harvest the best out of your stake with Bitzquad.&quot;</p>
+                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Brand Designing & Digital Marketing</h1>
+                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Brand designing creates unique key brand elements, such as the logo, colour scheme, typography, and other design components recognizable to consumers and stand out among competitors. Digital marketing is capturing leads and selling your product to the target market using digital channels.&quot;</p>
                         </div>
                         <div className="mx-auto">
-                            <p className="mt-6 text-lg leading-8 text-gray-600">Bitzquad Information Systems fulfill all back office, middle office and front office requirements in increasing productivity and sharing real-time information across business functions.</p>
-                            <p className="mt-6 text-lg leading-8 text-gray-600">
-                                We specially develop bespoke <b>EdTech Platforms</b> such as <b>Learning Management Systems</b>, <b>Human Resource Management Systems</b> and <b>Customer Relationship Management Systems</b>. These systems benefit enterprises in their decision-making and customer handling. Bitzquad has a well-defined methodology for connecting with the project stakeholders to ensure the promised product is delivered. Our competent team is ready to take you through a digital journey beyond your expectations.
-                            </p>
+                            <p className="mt-6 text-lg leading-8 text-gray-600">Brand designing and digital marketing with Bitzquad is a best choice if you want to make your brand and product stand out in the competition. Our experienced and skilled team is ready to take you through a unique journey to ensure your brand gets enriched value.</p>
+                            <p className=" mt-6 text-xl font-bold tracking-tight text-gray-900 ">We provide,</p>
+                            <ul className="ml-5 mt-4 list-inside list-disc text-lg leading-8 text-gray-600 md:ml-8">
+                                <li>Digital Strategy Formulation</li>
+                                <li>Content Marketing</li>
+                                <li>Search Engine Optimizing</li>
+                                <li>Social Media Advertising</li>
+                                <li>Social Media Management</li>
+                            </ul>
                         </div>
                         {/* <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
                             <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:pb-8">Your IS Journey with Us</h2>
@@ -123,7 +128,7 @@ const Index = () => {
                         </div>
 
                         <div className="lg:mt-15 mx-auto mb-16 mt-10 max-w-2xl sm:mt-20 lg:max-w-none">
-                            <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">Is this your next step to grow your business?</h4>
+                            <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">Enrich your brand with us.</h4>
                             <p className=" text-lg leading-8 text-gray-600">
                                 <Button className="talk-btn text-purple-600" parentClassName="px-0" href="/contact">
                                     Let&apos;s Talk

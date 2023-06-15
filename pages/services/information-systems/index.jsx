@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, LayoutSubPages } from "../../../components";
-import Meta from "../../../components/defaults/Meta";
+import Meta from "../../../components/_common/meta";
 import { useRouter } from "next/router";
 import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
 import Link from "next/link";
@@ -37,18 +37,18 @@ const Index = () => {
     return (
         <>
             <LayoutSubPages>
-                <Meta title="Bitzquad | Business Process Re-engineering" description="BPR with Bitzquad is your chance to improve your business processes tenfold with cutting-edge technology. We optimize your existing process, which is core to your enterprise success, looking at the best possible alternatives with the lowest opportunity cost for you." />
+                <Meta title="Bitzquad | Information Systems" description="Bitzquad Information Systems fulfill all back office, middle office and front office requirements in increasing productivity and sharing real-time information across business functions." />
                 <div className="bz-container relative mx-auto mt-0 h-full w-full bg-transparent lg:mt-44">
-                    <div className="mx-auto ">
+                    <div className="mx-auto">
                         <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Business Process Re-engineering</h1>
-                            <p className="mt-6 text-lg italic leading-8 text-gray-600">
-                                &quot;Business Process Re-engineering (BPR) is the revolutionary redesign of business processes to improve critical elements such as <b>quality, output, cost, service,</b> and <b>speed</b>. BPR aims to cut down enterprise costs and process redundancies on a vast scale.&quot;
-                            </p>
+                            <h1 className="text-3xl font-semibold uppercase lg:text-5xl">Information Systems</h1>
+                            <p className="mt-6 text-lg italic leading-8 text-gray-600">&quot;Information Systems are dominating the automation of routine work. Not only everyday work but also enterprise decision-making. Let’s harvest the best out of your stake with Bitzquad.&quot;</p>
                         </div>
                         <div className="mx-auto">
-                            <p className="mt-6 text-lg leading-8 text-gray-600">Unlike Business Process Improvement (BPI), BPR does not constrain your process improvement to a certain extent. BPR is about improving the process by looking at the bigger picture.</p>
-                            <p className="mt-6 text-lg leading-8 text-gray-600">BPR with Bitzquad is your chance to improve your business processes tenfold with cutting-edge technology. We optimize your existing process, which is core to your enterprise success, looking at the best possible alternatives with the lowest opportunity cost for you.</p>
+                            <p className="mt-6 text-lg leading-8 text-gray-600">Bitzquad Information Systems fulfill all back office, middle office and front office requirements in increasing productivity and sharing real-time information across business functions.</p>
+                            <p className="mt-6 text-lg leading-8 text-gray-600">
+                                We specially develop bespoke <b>EdTech Platforms</b> such as <b>Learning Management Systems</b>, <b>Human Resource Management Systems</b> and <b>Customer Relationship Management Systems</b>. These systems benefit enterprises in their decision-making and customer handling. Bitzquad has a well-defined methodology for connecting with the project stakeholders to ensure the promised product is delivered. Our competent team is ready to take you through a digital journey beyond your expectations.
+                            </p>
                         </div>
                         {/* <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-10 lg:max-w-none">
                             <h2 className="pb-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:pb-8">Your IS Journey with Us</h2>
@@ -123,7 +123,7 @@ const Index = () => {
                         </div>
 
                         <div className="lg:mt-15 mx-auto mb-16 mt-10 max-w-2xl sm:mt-20 lg:max-w-none">
-                            <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">BPR in mind?</h4>
+                            <h4 className=" text-xl font-bold tracking-tight text-gray-900 ">Is this your next step to grow your business?</h4>
                             <p className=" text-lg leading-8 text-gray-600">
                                 <Button className="talk-btn text-purple-600" parentClassName="px-0" href="/contact">
                                     Let&apos;s Talk
