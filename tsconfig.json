@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","index.d.ts",  "pages/index.jsx",   "pages/editor/dashboard/overview.jsx", "pages/privacy.jsx", "pages/pricing.jsx", "pages/contact.jsx", "pages/about.jsx", "pages/404.jsx", "pages/_app.jsx",  "pages/editor/dashboard/index.jsx", "pages/editor/jobs/index.jsx", "pages/editor/news/index.jsx", "pages/editor/other/index.jsx", "pages/editor/settings/index.jsx", "pages/editor/users/index.jsx", "components/editor/dataview.jsx", "components/_layouts/main.layout.jsx", "components/_layouts/admin.layout.jsx", "components/_common/footer.jsx", "components/_common/navbar.jsx", "pages/api/v1/newsletter/[action].js"],
+  "exclude": ["node_modules"]
+}

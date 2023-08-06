@@ -3,6 +3,7 @@ title: "Revolutionize Your Business: Discover the Benefits of Going Serverless T
 date: "Oct 24, 2022"
 excerpt: "Serverless is a well-known buzzword nowadays. How it will benifit my business?"
 category: "Technology"
+keywords: "Serverless, Serverless architecture, Simply explain serverless, Serverless in plain English, Serverless for babies, Traditional servers, No servers in serverless"
 read_duration: "4 minutes read"
 cover_image: "/assets/img/blog/post-serverless/post-serverless-cover.webp"
 main_image: "/assets/img/blog/post-serverless/post-serverless-main.webp"
