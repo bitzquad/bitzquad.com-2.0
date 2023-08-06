@@ -272,26 +272,26 @@ export const members = [
 
     //     ],
     // },
-    {
-        id: 13,
-        firstName: "Senuri",
-        lastName: "Wickramasinghe ",
-        role: { text: "Creative Designer", bgImg: "" },
-        img: "/assets/img/squad/senuri.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Great innovations emerge from self organizing teams!",
-        social: [
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/senuri-wickramasinghe/",
-            },
-            {
-                name: "Instagram",
-                url: "https://www.instagram.com/senuu.di/",
-            },
-        ],
-    },
+    // {
+    //     id: 13,
+    //     firstName: "Senuri",
+    //     lastName: "Wickramasinghe ",
+    //     role: { text: "Creative Designer", bgImg: "" },
+    //     img: "/assets/img/squad/senuri.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [1, 2],
+    //     description: "Great innovations emerge from self organizing teams!",
+    //     social: [
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/senuri-wickramasinghe/",
+    //         },
+    //         {
+    //             name: "Instagram",
+    //             url: "https://www.instagram.com/senuu.di/",
+    //         },
+    //     ],
+    // },
     {
         id: 14,
         firstName: "Induni",
