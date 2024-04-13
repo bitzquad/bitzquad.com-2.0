@@ -144,27 +144,27 @@ export const members = [
             },
         ],
     },
-    {
-        id: 7,
-        firstName: "Harsha",
-        lastName: "Abeyvickrama",
-        role: { text: "Chief Information Officer", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/harsha.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Prioritize the significant milestones to achieve your goals & be consistent on them. Success will follow .",
-        social: [
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/harshaabeyvickrama/",
-            },
+    // {
+    //     id: 7,
+    //     firstName: "Harsha",
+    //     lastName: "Abeyvickrama",
+    //     role: { text: "Chief Information Officer", bgImg: "/assets/img/squad/role/management.svg" },
+    //     img: "/assets/img/squad/harsha.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [1, 2],
+    //     description: "Prioritize the significant milestones to achieve your goals & be consistent on them. Success will follow .",
+    //     social: [
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/harshaabeyvickrama/",
+    //         },
 
-            {
-                name: "Github",
-                url: "https://github.com/HarshaAbeyvickrama/",
-            },
-        ],
-    },
+    //         {
+    //             name: "Github",
+    //             url: "https://github.com/HarshaAbeyvickrama/",
+    //         },
+    //     ],
+    // },
     // {
     //     id: 8,
     //     firstName: "Ashane",
