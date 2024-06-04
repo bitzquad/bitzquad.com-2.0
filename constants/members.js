@@ -1,65 +1,65 @@
 export const members = [
-    {
-        id: 1,
-        firstName: "Kesara",
-        lastName: "Karannagoda",
-        role: { text: "Founder, CEO", bgImg: "/assets/img/squad/role/founder.svg" },
-        img: "/assets/img/squad/kesara.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Imagination plays an important role in creativity. Discipline & Consistency will keep you in the run but the Execution & Passion is the key to ultimate reward. Once you keep all of these in check, you'll be on your own path towards success.",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/kesaralive/",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/kesaralive/",
-            },
-            {
-                name: "Instagram",
-                url: "https://www.instagram.com/kesaralive/",
-            },
-            {
-                name: "Github",
-                url: "https://github.com/kesaralive",
-            },
-        ],
-    },
-    {
-        id: 2,
-        firstName: "Harindu",
-        lastName: "Wijesinghe",
-        role: { text: "Co-Founder, CTO", bgImg: "/assets/img/squad/role/management.svg" },
-        img: "/assets/img/squad/harindu.webp",
-        bgColor: "#F5D6C3",
-        type: [1, 2],
-        description: "Never give up on your efforts, pursue your dreams, follow your passions, and don't let anyone tell you what to do.",
-        social: [
-            {
-                name: "Facebook",
-                url: "https://www.facebook.com/harindu.wij",
-            },
-            {
-                name: "LinkedIn",
-                url: "https://www.linkedin.com/in/harinduwijesinghe/",
-            },
-            {
-                name: "Instagram",
-                url: "https://www.instagram.com/harinducw/",
-            },
-            {
-                name: "Github",
-                url: "https://github.com/hariwij",
-            },
-        ],
-    },
+// {
+//     id: 1,
+//     firstName: "Kesara",
+//     lastName: "Karannagoda",
+//     role: { text: "Founder, CEO", bgImg: "/assets/img/squad/role/founder.svg" },
+//     img: "/assets/img/squad/kesara.webp",
+//     bgColor: "#F5D6C3",
+//     type: [1, 2],
+//     description: "Imagination plays an important role in creativity. Discipline & Consistency will keep you in the run but the Execution & Passion is the key to ultimate reward. Once you keep all of these in check, you'll be on your own path towards success.",
+//     social: [
+//         {
+//             name: "Facebook",
+//             url: "https://www.facebook.com/kesaralive/",
+//         },
+//         {
+//             name: "LinkedIn",
+//             url: "https://www.linkedin.com/in/kesaralive/",
+//         },
+//         {
+//             name: "Instagram",
+//             url: "https://www.instagram.com/kesaralive/",
+//         },
+//         {
+//             name: "Github",
+//             url: "https://github.com/kesaralive",
+//         },
+//     ],
+// },
+    // {
+    //     id: 2,
+    //     firstName: "Harindu",
+    //     lastName: "Wijesinghe",
+    //     role: { text: "Co-Founder, CTO", bgImg: "/assets/img/squad/role/management.svg" },
+    //     img: "/assets/img/squad/harindu.webp",
+    //     bgColor: "#F5D6C3",
+    //     type: [1, 2],
+    //     description: "Never give up on your efforts, pursue your dreams, follow your passions, and don't let anyone tell you what to do.",
+    //     social: [
+    //         {
+    //             name: "Facebook",
+    //             url: "https://www.facebook.com/harindu.wij",
+    //         },
+    //         {
+    //             name: "LinkedIn",
+    //             url: "https://www.linkedin.com/in/harinduwijesinghe/",
+    //         },
+    //         {
+    //             name: "Instagram",
+    //             url: "https://www.instagram.com/harinducw/",
+    //         },
+    //         {
+    //             name: "Github",
+    //             url: "https://github.com/hariwij",
+    //         },
+    //     ],
+    // },
     {
         id: 3,
         firstName: "Akash",
         lastName: "Geethanjana",
-        role: { text: "Co-Founder, CMO", bgImg: "/assets/img/squad/role/management.svg" },
+        role: { text: "CEO", bgImg: "/assets/img/squad/role/management.svg" },
         img: "/assets/img/squad/akash.webp",
         bgColor: "#F5D6C3",
         type: [1, 2],
